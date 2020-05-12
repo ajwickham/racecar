@@ -1,0 +1,25 @@
+.pagecontainer {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 50px 50px;
+}
+.side {
+  grid-column-start: 1;
+  grid-row-start:1;
+  background-color: greenyellow;
+
+}
+.temp {
+  grid-column-start:7;
+  grid-row-start: 1;
+  background-color: red;
+  position: relative;
+  z-index: 2;
+}
+.temp1 {
+  grid-column: 4/ span 8;
+  grid-row: 1/ span 2;
+  background-color: honeydew;
+  position: relative;
+  z-index: 1;
+}
