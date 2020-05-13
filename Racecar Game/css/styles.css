@@ -1,25 +1,66 @@
 .pagecontainer {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 50px 50px;
+  grid-template-columns: repeat(25, 4%);
+  grid-template-rows: repeat(20, 5%);
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+  z-index: 1;
 }
 .side {
-  grid-column-start: 1;
-  grid-row-start:1;
+  grid-column: 1 /5;
+  grid-row:1/20;
   background-color: greenyellow;
-
+  max-width: 100%;
+  max-height: 100%;
 }
-.temp {
-  grid-column-start:7;
-  grid-row-start: 1;
-  background-color: red;
+.main {
+  grid-column: 5 /26;
+  grid-row:1/20;
+  background-color: greenyellow;
+  max-width: 100%;
+  max-height: 100%;
   position: relative;
   z-index: 2;
 }
-.temp1 {
-  grid-column: 4/ span 8;
-  grid-row: 1/ span 2;
-  background-color: honeydew;
+.e {
+  grid-column-start: 5;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 21;
+  background-color: purple;
   position: relative;
-  z-index: 1;
+  z-index: 5;
+  max-width: 100%;
+}
+.green {
+  grid-column-start: 18;
+  grid-column-end: 19;
+  grid-row-start: 1;
+  grid-row-end: 21;
+  background-color: green;
+  position: relative;
+  z-index: 3;
+  max-width: 100%;
+}
+
+.blue {
+  grid-column: 15/16;
+  grid-row: 1/21;
+  background-color:blue;
+  position: relative;
+  z-index: 3;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.yellow {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  background-color: yellow;
+  position: relative;
+  z-index: 4;
+  max-width: 100%;
 }
