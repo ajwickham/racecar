@@ -1,25 +1,59 @@
 .pagecontainer {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 50px 50px;
+  width: 100vw;
+  height: 100vw;
+  grid-template-columns: 20vw 20vw 20vw 20vw 20vw;
+  grid-template-rows: 20vw 20vw 20vw 20vw ;
+  background-color: #fff;
+  color: #444;
 }
-.side {
-  grid-column-start: 1;
-  grid-row-start:1;
-  background-color: greenyellow;
 
+.box {
+  background-color: #444;
+  color: #fff;
+  font-size: 150%;
+  margin: 0%;
+  padding: 0%;
 }
-.temp {
-  grid-column-start:7;
-  grid-row-start: 1;
+
+.a {
+  grid-area: 2/2/3/3;
+}
+
+.b {
+  grid-area: 3/5/4/6;
+}
+.target {
+  grid-area: 1/2/2/3;
+  background-color: blue;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 50% 20% 30%;
+  grid-template-rows: 80% 10% 10%;
+}
+.eye {
+  grid-area: 2/2/3/3;
   background-color: red;
-  position: relative;
-  z-index: 2;
+  transform-origin: top left;
+  transform: rotate(45deg);
+  width: 3.5vw;
 }
-.temp1 {
-  grid-column: 4/ span 8;
-  grid-row: 1/ span 2;
-  background-color: honeydew;
-  position: relative;
-  z-index: 1;
+
+
+/*.are {
+  grid-area: 1/1/5/3;
+  background-color: salmon;
+}
+.normal {
+  grid-area: 3/3/4/4;
+  /*width: 80px;
+  background-color: skyblue;
+}*/
+
+
+
+
+.rotated {
+  
+  
 }

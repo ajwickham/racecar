@@ -5,8 +5,6 @@
   grid-template-columns: repeat(25, 4vw);
   grid-template-rows: repeat(33, 3vw);
   background-color: greenyellow;
-  position: relative;
-  z-index: 1;
 }
 .row1 {
   grid-column: 1;
@@ -22,28 +20,41 @@
   grid-column: 1 /4;
   grid-row:1/21;
   background-color: greenyellow;
-  position: relative;
 }
 .main {
   grid-column: 4 /25;
   grid-row:1/21;
-  position: relative;
-  z-index: 2;
 }
 .e2 {
   grid-area: 2/7/3/10;
-  position: relative;
-  z-index: 3;
   max-width: 100%;
   display: grid;
-  grid-template-columns: 30% 40% 30%;
+  background-color: hotpink;
+  grid-template-columns: 30% 15% 25% 30%;
   grid-template-rows: 20% 60% 20%;
+  /* To position vehicles on top of the destination icon, but not completely obscuring it the setup
+  of every grid box has to be changed. Originally they were 3 x 3 grids and the icon was located on 
+  the centre box. Now the centre box has to be split: 2 col 1 row, 2 col 2 rows or 1 col 2 rows.
+  This allows the edge of the rotate box to be located in the middle of the icon. Since every icon is
+  located individually, it is not necessary to change all of them from 3 x 3 to 4 x 4. Each is adjusted
+  as necessary*/
 }
 .e2box {
-  grid-area: 1/2/2/3;
-  position: relative;
-  z-index: 4;
+  grid-area: 1/2/2/4;
   max-width: 100%;
+  background-color: purple;
+}
+.e2rotate {
+  grid-area: 2/3/3/4;
+  transform-origin: top left;
+  transform: rotate(65deg);
+  width: 3.5vw;
+  position: relative;  
+  z-index: 5;  /* Positioned elements are stacked in front of non-positioned elements.  Icons are 
+                located using grid and so do not need to be positioned. This will allow vehicles to
+                be on top even though the icons are further down the html and so would be on top. In
+                hindsight, placing the icons in an anticlockwise manner would have eliminated the need for 
+                clockwise travelling vehicles to be given a z index at all!*/
 }
 .f2 {
   grid-area:1/9/3/10;
