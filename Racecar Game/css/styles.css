@@ -1,3 +1,52 @@
+/*Vehicle Selector Specific*/
+.vehicle-showing {
+  display: none;
+}
+
+
+li.borderless { 
+  border-top: 0 none; 
+}
+
+.RedDodgeViperfront {
+  background-image: url("../img/RedDodgeViper/Front.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.RedDodgeViperright {
+  background-image: url("../img/RedDodgeViper/Right.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.RedDodgeVipertop {
+  background-image: url("../img/RedDodgeViper/Top.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.Bigwheelcorvettefront{
+  background-image: url("../img/BigwheelCorvette/BigwheelCorvettefront.jpg");
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+}
+.carside {
+  height: 40vh;
+  width: auto;
+}
+.carend {
+  height: 40vh;
+  width: auto;
+}
+.cartop {
+  height: 80vh;
+  width: auto;
+}
+
+
+
+/* Track specific */
+
+
 .pagecontainer {
   display: grid;
   width: 100vw;
@@ -25,11 +74,12 @@
   grid-column: 4 /25;
   grid-row:1/21;
 }
+
+
 .e2 {
   grid-area: 2/7/3/10;
   max-width: 100%;
   display: grid;
-  background-color: hotpink;
   grid-template-columns: 30% 15% 25% 30%;
   grid-template-rows: 20% 60% 20%;
   /* To position vehicles on top of the destination icon, but not completely obscuring it the setup
@@ -42,7 +92,6 @@
 .e2box {
   grid-area: 1/2/2/4;
   max-width: 100%;
-  background-color: purple;
 }
 .e2rotate {
   grid-area: 2/3/3/4;

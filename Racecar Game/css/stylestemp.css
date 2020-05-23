@@ -8,6 +8,26 @@
   color: #444;
 }
 
+.picture {
+  background-color: hotpink;
+  position: relative;
+  z-index: 1;
+}
+.test {
+  background-image: url("../img/RedDodgeViper/Top.png");
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+  position: relative;
+  z-index: 2;
+}
+.test1 {
+  background-image: url("../img/RedDodgeViper/Top.png");
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+}
+
 .box {
   background-color: #444;
   color: #fff;
