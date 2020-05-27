@@ -1,48 +1,109 @@
 /*Vehicle Selector Specific*/
-.vehicle-showing {
-  display: none;
-}
-
-
 li.borderless { 
   border-top: 0 none; 
 }
 
-.RedDodgeViperfront {
-  background-image: url("../img/RedDodgeViper/Front.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.RedDodgeViperright {
-  background-image: url("../img/RedDodgeViper/Right.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.RedDodgeVipertop {
-  background-image: url("../img/RedDodgeViper/Top.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.Bigwheelcorvettefront{
-  background-image: url("../img/BigwheelCorvette/BigwheelCorvettefront.jpg");
-  height: 400px;
-  background-repeat: no-repeat;
-  background-size: 200px 200px;
-}
-.carside {
+.carsize {
   height: 40vh;
-  width: auto;
-}
-.carend {
-  height: 40vh;
-  width: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center, center;
 }
 .cartop {
   height: 80vh;
-  width: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center, center;
 }
 
 
+.RedDodgeViperfront {
+  background-image: url("../img/RedDodgeViper/Front.png");}
+.RedDodgeViperright {
+  background-image: url("../img/RedDodgeViper/Right.png");}
+.RedDodgeViperback {
+  background-image: url("../img/RedDodgeViper/Rear.png");}
+.RedDodgeVipertop {
+  background-image: url("../img/RedDodgeViper/Top.png");}
+.RedDodgeViperleft {
+  background-image: url("../img/RedDodgeViper/Left.png");}
+
+.BigwheelCorvettefront{
+  background-image: url("../img/BigwheelCorvette/front.png");}
+.BigwheelCorvetteright {
+  background-image: url("../img/BigwheelCorvette/right.png");}
+.BigwheelCorvetteback {
+  background-image: url("../img/BigwheelCorvette/rear.png");}
+.BigwheelCorvettetop {
+  background-image: url("../img/BigwheelCorvette/top.png");}
+.BigwheelCorvetteleft {
+  background-image: url("../img/BigwheelCorvette/left.png");}
+
+.HighMountEnginefront{
+  background-image: url("../img/HighMountEngine/front.png");}
+.HighMountEngineright {
+  background-image: url("../img/HighMountEngine/right.png");}
+.HighMountEngineback {
+  background-image: url("../img/HighMountEngine/rear.png");}
+.HighMountEnginetop {
+  background-image: url("../img/HighMountEngine/top.png");}
+.HighMountEngineleft {
+  background-image: url("../img/HighMountEngine/left.jpg");}
+ 
+.Peerless1911Roadsterfront{
+  background-image: url("../img/Peerless1911Roadster/front.png");}
+.Peerless1911Roadsterright {
+  background-image: url("../img/Peerless1911Roadster/right.png");}
+.Peerless1911Roadsterback {
+  background-image: url("../img/Peerless1911Roadster/rear.png");}
+.Peerless1911Roadstertop {
+  background-image: url("../img/Peerless1911Roadster/top.png");}
+.Peerless1911Roadsterleft {
+  background-image: url("../img/Peerless1911Roadster/left.png");}
+
+.QuarryTruckfront{
+  background-image: url("../img/QuarryTruck/front.png");}
+.QuarryTruckright {
+  background-image: url("../img/QuarryTruck/right.png");}
+.QuarryTruckback {
+  background-image: url("../img/QuarryTruck/rear.png");}
+.QuarryTrucktop {
+  background-image: url("../img/QuarryTruck/top.png");}
+.QuarryTruckleft {
+  background-image: url("../img/QuarryTruck/left.png");}
+
+.RedVolkswagenBeetlefront{
+  background-image: url("../img/RedVolkswagenBeetle/front.png");}
+.RedVolkswagenBeetleright {
+  background-image: url("../img/RedVolkswagenBeetle/right.png");}
+.RedVolkswagenBeetleback {
+  background-image: url("../img/RedVolkswagenBeetle//rear.png");}
+.RedVolkswagenBeetletop {
+  background-image: url("../img/RedVolkswagenBeetle/top.jpg");}
+.RedVolkswagenBeetleleft {
+  background-image: url("../img/RedVolkswagenBeetle/left.png");}  
+
+.YellowCadillacfront{
+  background-image: url("../img/YellowCadillac/front.png");}
+.YellowCadillacright {
+  background-image: url("../img/YellowCadillac/right.png");}
+.YellowCadillacback {
+  background-image: url("../img/YellowCadillac/rear.png");}
+.YellowCadillactop {
+  background-image: url("../img/YellowCadillac/top.png");}
+.YellowCadillacleft {
+  background-image: url("../img/YellowCadillac/left.png");}  
+
+.YellowFordFocusfront{
+  background-image: url("../img/YellowFordFocus/front.png");}
+.YellowFordFocusright {
+  background-image: url("../img/YellowFordFocus/right.png");}
+.YellowFordFocusback {
+  background-image: url("../img/YellowFordFocus/rear.png");}
+.YellowFordFocustop {
+  background-image: url("../img/YellowFordFocus/top.jpg");}
+.YellowFordFocusleft {
+  background-image: url("../img/YellowFordFocus/left.png");}  
 
 /* Track specific */
 
