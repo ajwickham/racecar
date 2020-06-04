@@ -1,0 +1,68 @@
+ /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+ .stack {
+  border: 1px solid blue;
+ }
+ .inner-stacks {
+  border: 1px solid #008000;
+  width: 40vw;
+  height: 20vw;
+  background-image: url("../img/Cardstacks/Bothstacks.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+ }
+ 
+ .flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid red;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden; /* For some reason setting visibility for front card stopped working*/
+  transform: rotateY(180deg);
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 40vw;
+  height: 13vw;
+  text-align: center;
+  transition: transform 10s;
+  transform-style: preserve-3d;
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 20vw;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) 
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+*/
+/* Style the back side */
+.flip-card-back {
+  transform: rotateY(180deg);
+  /*transform-origin: right;*/
+} 
+
+.target {
+background-color: crimson;
+height: 10vh;
+width: 40vw;
+background-repeat: no-repeat;
+ background-size: contain;
+ background-position: top left;
+}
+
+.redhelmet {
+  background-image: url("../img/Cardstacks/Discards/BlueTyre.png");
+  
+}

@@ -1,10 +1,15 @@
 //Business or back-end logic:
 $(document).ready(function() {
 
+
+  //Functions to next through left views of the cars.
   count1 = 0;
   count2 = 0;
+  count3 = 0;
+  count4 = 0;
   car1selected = 0
   car2selected = 0
+  card = 0
     
 
   $("button#next1").click(function() {
@@ -140,15 +145,6 @@ $(document).ready(function() {
     }; 
   }); 
 
-
-
-
-
-
-
-
-
-
   $("button#red1").click(function() {
     alert("Your choice of racecar has been reset");
       car1selected=0
@@ -160,8 +156,95 @@ $(document).ready(function() {
   }); 
 
 
+/*Turn cards.  This project is carried out before learning about arrays and loops, which makes representing flipping through a stack of cards
+tricky. As an approximation of that a random number is created that equals a class. There are 3 of each type of card, 9 types of card plus 5 racecar
+cards. So the random number is multiplied by 32 and the integer value taken to create 32 classes (0 is the first random number). Statistically this is
+rubbish, after 15 cards the chance of getting the red racecar is one in 16, eventually with only one card left, if the red racecar hasn't been played 
+yet the chance is 1 in 1.
 
+A future version might include an array basis for the cards, and could also distribute the icons around the track randomly*/
+uncard=0
+var previous=1
 
+$("#stack").click(function() {
+  count4 +=1;
+  if (count4 >2) {
+      $("div.back-stand-in").removeClass(previous);
+  }
+  if (uncard!=0) {
+    $("div.back-stand-in").addClass(uncard);
+    $("div.flip-card-back").removeClass(uncard);
+    $("div.flip-card-inner").removeClass("flip-card");
+  }
+    
+  previous=uncard  
+  icon = ((Math.random())*6)
+  card=Math.round(icon)
+
+  if (card<=3) {
+    $("div.flip-card-back").addClass("RedHelmet");
+    uncard="RedHelmet";
+  }
+  if (card>3 && card<=6) {
+    $("div.flip-card-back").addClass("BlueHelmet");
+    uncard="BlueHelmet"  
+  }
+  /*if (card>6&&card<=9) {
+    $("div.discard").addClass("YellowHelmet");  
+    uncard="YellowHelmet"
+  }
+  if (card>9&&card<=12) {
+    $("div.discard").addClass("RedFlag"); 
+    uncard="RedFlag" 
+  }
+  if (card>12&&card<=15) {
+    $("div.discard").addClass("GreenFlag"); 
+    uncard="GreenFlag" 
+  }
+  if (card>15&&card<=18) {
+    $("div.discard").addClass("YellowFlag");
+    uncard="YellowFlag"  
+  }
+  if (card>18&&card<=21) {
+    $("div.discard").addClass("RedTyre");
+    uncard="RedTyre"  
+  }
+  if (card>21&&card<=24) {
+    $("div.discard").addClass("BlueTyre");  
+    uncard="BlueTyre"
+  }
+  if (card>24&&card<=27) {
+    $("div.discard").addClass("GreenTyre");
+    uncard="GreenTyre"  
+  }
+  if (card===28) {
+    $("div.discard").addClass("RedRacecar"); 
+    uncard="RedRacecar" 
+  }
+  if (card===29) {
+    $("div.discard").addClass("BlueRacecar");
+    uncard="BlueRacecar"  
+  }
+  if (card===30) {
+    $("div.discard").addClass("GreenRacecar");
+    uncard="GreenRacecar"  
+  }
+  if (card===31) {
+    $("div.discard").addClass("PurpleRacecar");
+    uncard="PurpleRacecar"  
+  }
+  if (card===32) {
+    $("div.discard").addClass("YellowRacecar");
+    uncard="YellowRacecar"*/  
+  //}
+    /*if (uncard !=0) {
+      $("div.back-stand-in").removeClass(previousuncard);
+    } */
+  alert("Are you ready?");/*for some reason it won't do a second flip
+                          without this break here. Event bubbling? */
+    $("div.flip-card-inner").addClass("flip-card");
+    
+  });
 
 
 

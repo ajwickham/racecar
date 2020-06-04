@@ -124,13 +124,113 @@ li.borderless {
   min-height: 3vw;
   max-height: 3vw;
 }
-/* row2-25 classes are set at the bottom.  This prevents grid from 
-      auto sizing the rows if they empty*/  
 .side {
   grid-column: 1 /4;
   grid-row:1/21;
   background-color: greenyellow;
 }
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.stack {
+  grid-area: 10/1/15/8;
+   }
+.inner-stacks {
+  width: 25.5vw;
+  height: 10vw;
+  background-image: url("../img/Cardstacks/Bothstacks.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+ }
+ 
+.flip-card {
+  background-color: transparent;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden; /* For some reason setting visibility for front card stopped working*/
+  transition: transform 10s;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+  perspective: 100px; /* Remove this if you don't want the 3D effect */
+}
+
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 27vw;
+  height: 13vw;
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 13.5vw;
+  height: 60%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the back side Ironically this is the side of the card with the picture, usually known as the front!*/
+.flip-card-back {
+  transform: rotateY(180deg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top left;
+} 
+
+.back-stand-in {  /*This replaces the flip-card-back so the flip-card back can be removed and the
+                    next flip-card-back brought into place*/
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 27vw;
+  height: 7.5vw;
+  background-position: top right;
+}
+
+
+.RedHelmet {
+  background-image: url("../img/Cardstacks/Discards/RedHelmetcard.png"); 
+}
+.BlueHelmet {
+  background-image: url("../img/Cardstacks/Discards/BlueHelmetcard.png"); 
+}
+.YellowHelmet{
+  background-image: url("../img/Discards/YellowHelmet.png"); 
+}
+.RedFlag{
+  background-image: url("../img/Discards/RedFlag.png"); 
+}
+.GreenFlag{
+  background-image: url("../img/Discards/Greenflag.png"); 
+}
+.YellowFlag{
+  background-image: url("../img/Discards/Yellowflag.png"); 
+}
+.RedTyre{
+  background-image: url("../img/Discards/RedTyre.png"); 
+}
+.BlueTyre{
+  background-image: url("../img/Discards/BlueTyre.png"); 
+}
+.GreenTyre{
+  background-image: url("../img/Discards/GreenTyre.png"); 
+}
+.RedRacecar{
+  background-image: url("../img/Discards/RedRacecar.png"); 
+}
+.BlueRacecar{
+  background-image: url("../img/Discards/BlueRacecar.png"); 
+}
+.GreenRacecar{
+  background-image: url("../img/Discards/GreenRacecar.png"); 
+}
+.PurpleRacecar{
+  background-image: url("../img/Discards/PurpleRacecar.png"); 
+}
+.YellowRacecar{
+  background-image: url("../img/Discards/YellowRacecar.png"); 
+}
+
+
 .main {
   grid-column: 4 /25;
   grid-row:1/21;
@@ -172,15 +272,23 @@ li.borderless {
   z-index: 3;
   max-width: 100%;
   display: grid;
-  grid-template-columns: 20% 70% 10%;
+  grid-template-columns: 20% 35% 35% 10%;
   grid-template-rows: 70% 20% 10%;
 }
 .f2box {
-  grid-area: 2/2/3/3;
+  grid-area: 2/2/3/4;
   position: relative;
   z-index: 4;
   max-width: 100%;
 }
+.f2rotate {
+  grid-area: 2/3/3/4;
+  transform-origin: top left;
+  transform: rotate(90deg);
+  width: 3.5vw;
+  position: relative;  
+  z-index: 5;
+}  
 .g3 {
   grid-area: 2/10/3/12;
   position: relative;
