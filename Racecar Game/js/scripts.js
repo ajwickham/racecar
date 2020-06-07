@@ -117,6 +117,7 @@ $(document).ready(function() {
     else {
       alert(car1+" selected");
       car1selected = car1
+      localStorage.transfer1 = car1;
     }; 
   }); 
 
@@ -142,6 +143,7 @@ $(document).ready(function() {
     else {
       alert(car2+" selected");
       car2selected = car2
+      localStorage.transfer2 = car2;
     }; 
   }); 
 
@@ -155,6 +157,8 @@ $(document).ready(function() {
       car2selected=0
   }); 
 
+//RACETRACK PAGE
+
 
 /*Turn cards.  This project is carried out before learning about arrays and loops, which makes representing flipping through a stack of cards
 tricky. As an approximation of that a random number is created that equals a class. There are 3 of each type of card, 9 types of card plus 5 racecar
@@ -164,9 +168,20 @@ yet the chance is 1 in 1.
 
 A future version might include an array basis for the cards, and could also distribute the icons around the track randomly*/
 uncard=0
-var previous=1
+previous=1
+t = 0
+
+$("button#red3").click(function() {  /* Probably should redo and not use bootstrap so it responds with grid*/
+  $("div.s17rotate").addClass(x+"top");
+  $("div.s18rotate").addClass(y+"top");
+}); 
+
 
 $("#stack").click(function() {
+  t=1-t  //determines whose turn it is
+  if (t===1) {turn=1}
+  else {turn =2}
+  
   count4 +=1;
   if (count4 >2) {
       $("div.back-stand-in").removeClass(previous);
@@ -178,7 +193,7 @@ $("#stack").click(function() {
   }
     
   previous=uncard  
-  icon = ((Math.random())*6)
+  icon = ((Math.random())*3)  //don't forget to put this back to 32
   card=Math.round(icon)
 
   if (card<=3) {
@@ -189,69 +204,141 @@ $("#stack").click(function() {
     $("div.flip-card-back").addClass("BlueHelmet");
     uncard="BlueHelmet"  
   }
-  /*if (card>6&&card<=9) {
-    $("div.discard").addClass("YellowHelmet");  
+  if (card>6&&card<=9) {
+    $("div.flip-card-back").addClass("YellowHelmet");  
     uncard="YellowHelmet"
   }
   if (card>9&&card<=12) {
-    $("div.discard").addClass("RedFlag"); 
+    $("div.flip-card-back").addClass("RedFlag"); 
     uncard="RedFlag" 
   }
   if (card>12&&card<=15) {
-    $("div.discard").addClass("GreenFlag"); 
+    $("div.flip-card-back").addClass("GreenFlag"); 
     uncard="GreenFlag" 
   }
   if (card>15&&card<=18) {
-    $("div.discard").addClass("YellowFlag");
+    $("div.flip-card-back").addClass("YellowFlag");
     uncard="YellowFlag"  
   }
   if (card>18&&card<=21) {
-    $("div.discard").addClass("RedTyre");
+    $("div.flip-card-back").addClass("RedTyre");
     uncard="RedTyre"  
   }
   if (card>21&&card<=24) {
-    $("div.discard").addClass("BlueTyre");  
+    $("div.flip-card-back").addClass("BlueTyre");  
     uncard="BlueTyre"
   }
   if (card>24&&card<=27) {
-    $("div.discard").addClass("GreenTyre");
+    $("div.flip-card-back").addClass("GreenTyre");
     uncard="GreenTyre"  
   }
   if (card===28) {
-    $("div.discard").addClass("RedRacecar"); 
+    $("div.flip-card-back").addClass("RedRacecar"); 
     uncard="RedRacecar" 
   }
   if (card===29) {
-    $("div.discard").addClass("BlueRacecar");
+    $("div.flip-card-back").addClass("BlueRacecar");
     uncard="BlueRacecar"  
   }
   if (card===30) {
-    $("div.discard").addClass("GreenRacecar");
+    $("div.flip-card-back").addClass("GreenRacecar");
     uncard="GreenRacecar"  
   }
   if (card===31) {
-    $("div.discard").addClass("PurpleRacecar");
+    $("div.flip-card-back").addClass("PurpleRacecar");
     uncard="PurpleRacecar"  
   }
   if (card===32) {
-    $("div.discard").addClass("YellowRacecar");
-    uncard="YellowRacecar"*/  
-  //}
-    /*if (uncard !=0) {
-      $("div.back-stand-in").removeClass(previousuncard);
-    } */
+    $("div.flip-card-back").addClass("YellowRacecar");
+    uncard="YellowRacecar"  
+  }
+   
   alert("Are you ready?");/*for some reason it won't do a second flip
                           without this break here. Event bubbling? */
-    $("div.flip-card-inner").addClass("flip-card");
+  $("div.flip-card-inner").addClass("flip-card");
     
   });
 
 
+/*  GAME FUNCTIONALITY  
+
+Inputs - 
+    cars selected = car1selected  car2selected
+    card turned = uncard
+    track square selected - tbd */
+
+    var x = localStorage.getItem("transfer1"); //brings car choices across from selector page
+    var y = localStorage.getItem("transfer2");
+
+    car1space = 0
+    car2space = 0
+
+  function checkspace(location) {
+    alert(location);
+    if (position != uncard) {
+      alert("no that's "+position+" not "+uncard);
+    }
+    if (turn===1) {
+      if ((space-car1space)>11) {
+        alert("Did you miss a "+uncard+" before that?");
+      }
+      else {
+        car1space = space
+        $("div."+location).addclass(x+"top");  //got to remove class from previous place
+      }
+    }    
+    if (turn===2) {
+      if ((space-car2space)>11) {
+        alert("Did you miss a "+uncard+" before that?");
+      }
+      else {
+        car2space = space
+        $("div."+location).addclass(y+"top");
+      }
+    }
+    };
+    
 
 
+    // Turn starts by clicking pile of cards.
+
+    $("#r18").click(function() {  
+      /*position = "RedHelmet";
+      space = 1
+      checkspace ("r18rotate");*/ 
+      alert ("yippee");
+   });
+
+    $("#q18").click(function() {  
+      /*position = "RedHelmet";
+      space = 1
+      checkspace ("r18rotate");*/ 
+      alert ("yippee");
+  });
+
+    $("#p18").click(function() {  
+      /*position = "RedHelmet";
+      space = 1
+      checkspace ("r18rotate");*/ 
+      alert ("yippee");
+    });
+
+   $("#g3").click(function() {  
+      position = "RedHelmet";
+      space = 45
+      
+     
+      alert("car1 = "+x+" car2 = "+y);
+      alert("class to add "+(x+"top"));
+      
+      checkspace ();
+      alert(turn);
+       
+   });
+ 
 
 
-});
+});//end of document 
 
 
 
