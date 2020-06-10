@@ -1,7 +1,3 @@
-.img {
-  position: relative;
-}
-
 
 /*Vehicle Selector Specific*/
 li.borderless { 
@@ -120,15 +116,20 @@ li.borderless {
   grid-template-columns: repeat(25, 4vw);
   grid-template-rows: repeat(33, 3vw);
   background-color: greenyellow;
+  position: absolute
 }
-.row1 {
-  grid-column: 1;
-  grid-row:1;
+.pagecontainerA {
+  display: grid;
+  grid-template-columns: repeat(1000, 0.1vw);
+  grid-template-rows: repeat(999, 0.1vw);
+  position: absolute
 }
-.rowsize {
-  min-height: 3vw;
-  max-height: 3vw;
+.testbox {
+  grid-area: 516/830/517/831;
+  z-index: 20;
 }
+
+
 .side {
   grid-column: 1 /4;
   grid-row:1/21;
@@ -240,6 +241,11 @@ li.borderless {
   grid-column: 4 /25;
   grid-row:1/21;
 }
+.mainA {
+  grid-column: 122 /972;
+  grid-row:1/607;
+}
+
 
 .square {  /*class attached to all grid areas for example e2 creating a subgrid for accurate targeting*/
   position: relative;
@@ -738,6 +744,7 @@ li.borderless {
 }
 .r18box {
   grid-area: 3/9/5/10;
+  position: absolute;
 }
 .r18rotate {  /* Need to split this so there is an angle for player 1 and for player 2*/
   grid-area: 3/1/5/2;
@@ -755,33 +762,36 @@ li.borderless {
  }*/
 .q18box {
   grid-area: 4/6/5/8;
+  z-index: 1;
+  position: absolute;
 }
 .q18rotate {  
-  grid-area: 5/1/7/2;
+  /*grid-area: 17/18/20/23;*/
   transform-origin:top center;
   transform: rotate(270deg);
   width: 3.5vw;
   height: 10vw;
   position: relative;  
-  z-index: 5;
-  /*background-image: url("../img/YellowCadillac/top.png");*/
+  z-index: 10;
+  background-image: url("../img/YellowCadillac/top.png");
 }
 .p18 {
   grid-area:17/18/20/23;
-  grid-template-columns: 8% 10% 10% 15% 12% 7% 8% 3% 20% 7%;
+  grid-template-columns: 13% 16% 2% 13% 10% 7% 8% 3% 20% 7%;
   grid-template-rows: 20% 15% 5% 15% 15% 30% 0%;
   border: solid;
 }
 .p18box {
-  grid-area: 2/3/3/4;
+  grid-area: 4/4/5/6;
+  position: absolute;
 }
-.o18 {
+/*.o18 { This overlapped so had to be removed
   grid-area:18/18/20/21;
   grid-template-columns: 23% 24% 43%;
   grid-template-rows: 22% 60% 18%;
-}
+}*/
 .o18box {
-  grid-area: 2/2/3/3;
+  grid-area: 5/2/6/3;
 }
 
 .m18 {

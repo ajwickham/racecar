@@ -172,6 +172,7 @@ previous=1
 t = 0
 
 $("button#red3").click(function() {  /* Probably should redo and not use bootstrap so it responds with grid*/
+  alert("afsfa");
   $("div.s17rotate").addClass(x+"top");
   $("div.s18rotate").addClass(y+"top");
 }); 
@@ -314,6 +315,7 @@ Inputs -
       space = 1
       checkspace ("r18rotate");*/ 
       alert ("yippee");
+      /*$("#q18").addclass("q18rotate");*/
   });
 
     $("#p18").click(function() {  
