@@ -124,15 +124,15 @@ li.borderless {
   grid-template-rows: repeat(999, 0.1vw);
   position: absolute
 }
-.testbox {
-  grid-area: 516/830/517/831;
-  z-index: 20;
-}
-
 
 .side {
   grid-column: 1 /4;
   grid-row:1/21;
+  background-color: greenyellow;
+}
+.sideA {
+  grid-column: 1 /122;
+  grid-row:1/999;
   background-color: greenyellow;
 }
 
@@ -140,6 +140,9 @@ li.borderless {
 .stack {
   grid-area: 10/1/15/8;
    }
+.stackA {
+grid-area: 100/1/200/200;
+  }  
 .inner-stacks {
   width: 25.5vw;
   height: 10vw;
@@ -245,8 +248,19 @@ li.borderless {
   grid-column: 122 /972;
   grid-row:1/607;
 }
-
-
+.z5 {
+  z-index: 5;
+}
+.rotate {
+  transform-origin:top center;
+  width: 3.5vw;
+  height: 10vw;
+  position: relative;  
+  z-index: 10;
+  background-image: url("../img/Peerless1911Roadster/left.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 .square {  /*class attached to all grid areas for example e2 creating a subgrid for accurate targeting*/
   position: relative;
   display: grid;
@@ -737,10 +751,8 @@ li.borderless {
   z-index: 5;
   
 }
-.r18 {  /* replaced with p18*/
-  grid-area:17/20/20/23;
-  grid-template-columns: 10% 15% 10% 15% 0% 10% 10% 20% 5% 5%;
-  grid-template-rows: 20% 15% 5% 15% 15% 30% 0%;
+.r18A {
+  grid-area: 516/830;
 }
 .r18box {
   grid-area: 3/9/5/10;
@@ -760,26 +772,43 @@ li.borderless {
   grid-template-columns: 36% 38% 26%;
   grid-template-rows: 40% 60% 0%;
  }*/
-.q18box {
+ .q18A {
+  grid-area: 523/800;
+}
+ .q18box {
   grid-area: 4/6/5/8;
   z-index: 1;
   position: absolute;
 }
-.q18rotate {  
-  /*grid-area: 17/18/20/23;*/
+.q18Arotate {  
+  grid-area: 490/790;
+  transform: rotate(270deg);
+  height: 15vw;
+  width: 7vw;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.q18Acar {
+  background-image: url("../img/Peerless1911Roadster/top.png");
+  z-index: 20;
+}
+/*.q18rotate {  
+  /*grid-area: 17/18/20/23;
   transform-origin:top center;
   transform: rotate(270deg);
   width: 3.5vw;
   height: 10vw;
   position: relative;  
-  z-index: 10;
+  z-index: 5;
   background-image: url("../img/YellowCadillac/top.png");
-}
+ }*/
 .p18 {
   grid-area:17/18/20/23;
   grid-template-columns: 13% 16% 2% 13% 10% 7% 8% 3% 20% 7%;
   grid-template-rows: 20% 15% 5% 15% 15% 30% 0%;
-  border: solid;
+}
+.p18A {
+  grid-area: 523/750;
 }
 .p18box {
   grid-area: 4/4/5/6;
@@ -790,10 +819,19 @@ li.borderless {
   grid-template-columns: 23% 24% 43%;
   grid-template-rows: 22% 60% 18%;
 }*/
+/*.p18Arotate {  
+  grid-area: 543/750/643/850;
+  /*transform: rotate(270deg);
+  background-image: url("../img/YellowCadillac/top.png");
+  background-color: blue;
+  z-index: 2; 
+}*/
 .o18box {
   grid-area: 5/2/6/3;
 }
-
+.o18A {
+  grid-area: 530/716;
+}
 .m18 {
   grid-area:18/16/20/18;
   grid-template-columns: 35% 35% 30%;

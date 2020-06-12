@@ -194,7 +194,7 @@ $("#stack").click(function() {
   }
     
   previous=uncard  
-  icon = ((Math.random())*3)  //don't forget to put this back to 32
+  icon = ((Math.random())*32)  
   card=Math.round(icon)
 
   if (card<=3) {
@@ -306,23 +306,28 @@ Inputs -
     $("#r18").click(function() {  
       /*position = "RedHelmet";
       space = 1
-      checkspace ("r18rotate");*/ 
-      alert ("yippee");
+      checkspace ("r18rotate");
+      alert ("yippee");*/ 
    });
 
     $("#q18").click(function() {  
       /*position = "RedHelmet";
       space = 1
-      checkspace ("r18rotate");*/ 
+      checkspace ("r18rotate"); 
       alert ("yippee");
       /*$("#q18").addclass("q18rotate");*/
   });
-
+robert = 0 
     $("#p18").click(function() {  
       /*position = "RedHelmet";
       space = 1
       checkspace ("r18rotate");*/ 
-      alert ("yippee");
+      alert (robert);
+      robert = 1
+      alert (robert);
+      if (robert=1) {
+        $("div.q18Arotate").addClass("q18Acar");
+      }
     });
 
    $("#g3").click(function() {  
