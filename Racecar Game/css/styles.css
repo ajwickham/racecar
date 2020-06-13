@@ -113,32 +113,21 @@ li.borderless {
   display: grid;
   width: 100vw;
   height: 99vw;
-  grid-template-columns: repeat(25, 4vw);
-  grid-template-rows: repeat(33, 3vw);
+  grid-template-columns: repeat(1000, 0.1vw);
+  grid-template-rows: repeat(1000, 0.1vw);
   background-color: greenyellow;
   position: absolute
 }
-.pagecontainerA {
-  display: grid;
-  grid-template-columns: repeat(1000, 0.1vw);
-  grid-template-rows: repeat(999, 0.1vw);
-  position: absolute
-}
-.testbox {
-  grid-area: 516/830/517/831;
-  z-index: 20;
-}
-
 
 .side {
-  grid-column: 1 /4;
-  grid-row:1/21;
+  grid-column: 1 /200;
+  grid-row:1/600;
   background-color: greenyellow;
 }
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .stack {
-  grid-area: 10/1/15/8;
+  grid-area: 300/1;
    }
 .inner-stacks {
   width: 25.5vw;
@@ -238,24 +227,82 @@ li.borderless {
 
 
 .main {
-  grid-column: 4 /25;
-  grid-row:1/21;
+  grid-column: 200/1000;
+  grid-row:1/600;
 }
-.mainA {
-  grid-column: 122 /972;
-  grid-row:1/607;
+.square {  /*class attached to grid areas to hold icons for example e2box*/
+  z-index: 1;
+  position: absolute;
 }
 
 
-.square {  /*class attached to all grid areas for example e2 creating a subgrid for accurate targeting*/
-  position: relative;
-  display: grid;
-  z-index: 3;
+
+
+.s17 {
+  grid-area:500/700;
 }
-.icon {  /*class attached to subgrid areas to hold icons for example e2box*/
-  position: relative;
-  z-index: 4;
+.s17rotate {
+  grid-area: 2/3/3/4;
+  transform-origin: center center;
+  transform: rotate(220deg);
+  width: 3.5vw;
+  height: 10vw;
+  position: relative;  
+  z-index: 5;
 }
+
+.r18box {
+  grid-area: 512/868;
+}
+.p18rotate {
+  grid-area: 540/790;
+  width: 3.5vw;
+  height: 10vw;
+  
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute; 
+  transform-origin: top center;
+  transform: rotate(265deg);
+}
+.q18box {
+  grid-area: 516/837
+}
+.p18box {
+  grid-area: 516/790;
+}
+.o18box {
+  grid-area: 526/759;
+}
+.m18box {
+  grid-area: 520/682;
+}
+.l18box {
+  grid-area: 515/640;
+}
+.k18box {
+  grid-area: 520/601;
+}
+.j18box {
+  grid-area: 530/570;
+}
+.i19box {
+  grid-area: 525/532;
+}
+.h19box {
+  grid-area: 522/485;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .e2 {
   grid-area: 2/7/3/10;
@@ -487,9 +534,7 @@ li.borderless {
   grid-template-columns: 22% 48% 30%;
   grid-template-rows: 42% 30% 28%;
 }
-.o2box {
-  grid-area: 2/2/3/3;
-}
+
 .p2 {
   grid-area:1/19/3/21;
   grid-template-columns: 25% 40% 35%;
@@ -707,21 +752,6 @@ li.borderless {
 
 
 
-
-.s17 {
-  grid-area:14/22/18/23;
-  grid-template-columns: 20% 30% 50%;
-  grid-template-rows: 35% 20% 45%;
-}
-.s17rotate {
-  grid-area: 2/3/3/4;
-  transform-origin: center center;
-  transform: rotate(220deg);
-  width: 3.5vw;
-  height: 10vw;
-  position: relative;  
-  z-index: 5;
-}
 .s18 {
   grid-area:17/23/20/24;
   grid-template-columns: 35% 30% 35%;
@@ -742,29 +772,14 @@ li.borderless {
   grid-template-columns: 10% 15% 10% 15% 0% 10% 10% 20% 5% 5%;
   grid-template-rows: 20% 15% 5% 15% 15% 30% 0%;
 }
-.r18box {
-  grid-area: 3/9/5/10;
-  position: absolute;
-}
-.r18rotate {  /* Need to split this so there is an angle for player 1 and for player 2*/
-  grid-area: 3/1/5/2;
-  transform-origin:top right;
-  transform: rotate(300deg);
-  width: 3.5vw;
-  height: 10vw;
-  position: relative;  
-  z-index: 5;
-}
+
+
 /*.q18 {  This overlapped so had to be removed
   grid-area:17/20/20/22;
   grid-template-columns: 36% 38% 26%;
   grid-template-rows: 40% 60% 0%;
  }*/
-.q18box {
-  grid-area: 4/6/5/8;
-  z-index: 1;
-  position: absolute;
-}
+
 .q18rotate {  
   /*grid-area: 17/18/20/23;*/
   transform-origin:top center;
@@ -781,67 +796,53 @@ li.borderless {
   grid-template-rows: 20% 15% 5% 15% 15% 30% 0%;
   border: solid;
 }
-.p18box {
-  grid-area: 4/4/5/6;
-  position: absolute;
-}
 /*.o18 { This overlapped so had to be removed
   grid-area:18/18/20/21;
   grid-template-columns: 23% 24% 43%;
   grid-template-rows: 22% 60% 18%;
 }*/
-.o18box {
-  grid-area: 5/2/6/3;
-}
 
 .m18 {
   grid-area:18/16/20/18;
   grid-template-columns: 35% 35% 30%;
   grid-template-rows: 15% 60% 25%;
 }
-.m18box {
-  grid-area: 2/2/3/3;
-}
+
 .l18 {
   grid-area:17/15/20/17;
   grid-template-columns: 25% 55% 20%;
   grid-template-rows: 35% 60% 5%;
 }
-.l18box {
-  grid-area: 2/2/3/3;
-}
+
+
+
+
+
+
 .k18 {
   grid-area:17/14/20/16;
   grid-template-columns: 25% 55% 20%;
   grid-template-rows: 40% 60% 0%;
 }
-.k18box {
-  grid-area: 2/2/3/3;
-}
+
 .j18 {
   grid-area:18/13/20/15;
   grid-template-columns: 35% 35% 30%;
   grid-template-rows: 20% 40% 40%;
 }
-.j18box {
-  grid-area: 2/2/3/3;
-}
+
 .i19 {
   grid-area:18/12/20/14;
   grid-template-columns: 35% 35% 30%;
   grid-template-rows: 25% 40% 35%;
 }
-.i19box {
-  grid-area: 2/2/3/3;
-}
+
 .h19 {
   grid-area:18/11/20/13;
   grid-template-columns: 25% 50% 25%;
   grid-template-rows: 15% 40% 45%;
 }
-.h19box {
-  grid-area: 2/2/3/3;
-}
+
 .g19 {
   grid-area:18/10/20/12;
   grid-template-columns: 30% 40% 30%;

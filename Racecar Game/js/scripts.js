@@ -194,7 +194,7 @@ $("#stack").click(function() {
   }
     
   previous=uncard  
-  icon = ((Math.random())*3)  //don't forget to put this back to 32
+  icon =  7 //((Math.random())*3)  don't forget to put this back to 32
   card=Math.round(icon)
 
   if (card<=3) {
@@ -274,8 +274,13 @@ Inputs -
     car1space = 0
     car2space = 0
 
+    car1oldlocation = "p18rotate" 
+    car2oldlocation = "p18rotate"   //remove this once first go is sorted
   function checkspace(location) {
-    alert(location);
+    alert("car 1 is "+x);
+    alert(location+" is the location");
+    alert("This is "+turn+" turn");
+    alert(space);
     if (position != uncard) {
       alert("no that's "+position+" not "+uncard);
     }
@@ -284,17 +289,28 @@ Inputs -
         alert("Did you miss a "+uncard+" before that?");
       }
       else {
+        document.getElementById(car1oldlocation).style.zIndex = "1";  
+        $("div."+car1oldlocation).removeClass(x+"top");
+        alert("yes");
+        document.getElementById(location).style.zIndex = "5";  
+        $("div."+location).addClass(x+"top");  //got to remove class from previous place
+        car1oldlocation = location
         car1space = space
-        $("div."+location).addclass(x+"top");  //got to remove class from previous place
       }
+      
     }    
     if (turn===2) {
       if ((space-car2space)>11) {
         alert("Did you miss a "+uncard+" before that?");
       }
       else {
+        document.getElementById(car2oldlocation).style.zIndex = "1";  
+        $("div."+car2oldlocation).removeClass(x+"top");
+        alert("yes");
+        document.getElementById(location).style.zIndex = "5";  
+        $("div."+location).addClass(x+"top");  //got to remove class from previous place
+        car2oldlocation = location
         car2space = space
-        $("div."+location).addclass(y+"top");
       }
     }
     };
@@ -305,24 +321,24 @@ Inputs -
 
     $("#r18").click(function() {  
       /*position = "RedHelmet";
-      space = 1
-      checkspace ("r18rotate");*/ 
-      alert ("yippee");
-   });
+      space = 1*/
+      alert ("This is r18");
+      checkspace (r18rotate); 
+    });
 
     $("#q18").click(function() {  
       /*position = "RedHelmet";
       space = 1
       checkspace ("r18rotate");*/ 
-      alert ("yippee");
+      alert ("this is q18");
       /*$("#q18").addclass("q18rotate");*/
   });
 
     $("#p18").click(function() {  
-      /*position = "RedHelmet";
+      position = "YellowHelmet";
       space = 1
-      checkspace ("r18rotate");*/ 
-      alert ("yippee");
+      alert ("This p18");
+      checkspace ("p18rotate"); 
     });
 
    $("#g3").click(function() {  
