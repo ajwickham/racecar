@@ -241,22 +241,9 @@ li.borderless {
   background-size: contain;
   position: absolute; 
   transform-origin: top center;
-}
-
-
-
-.s17 {
-  grid-area:500/700;
-}
-.s17rotate {
-  grid-area: 2/3/3/4;
-  transform-origin: center center;
-  transform: rotate(220deg);
-  width: 3.5vw;
-  height: 10vw;
-  position: relative;  
   z-index: 5;
 }
+
 
 .r18box {
   grid-area: 512/868;
@@ -295,119 +282,129 @@ li.borderless {
   grid-area: 527/405;
 }
 
-
-
-
-
-
+.s17Arotate {
+  grid-area:510/888;
+  transform: rotate(210deg);
+  background-image: url(../img/YellowCadillac/top.png);
+  }
+.s17Crotate {
+  grid-area:535/910;
+  transform: rotate(220deg);
+  background-image: url(../img/YellowCadillac/top.png);
+  }
 .r18Arotate {
-  grid-area:512/868;
-  transform: rotate(270deg);
+  grid-area:518/868;
+  transform: rotate(220deg);
   }
 .r18Brotate {
-  grid-area:512/868;
-  transform: rotate(270deg);
+  grid-area:530/868;
+  transform: rotate(235deg);
   }
 .r18Crotate {
-  grid-area:512/868;
-  transform: rotate(270deg);
+  grid-area:548/876;
+  transform: rotate(250deg);
   }
 .q18Arotate {
   grid-area:516/837;
   transform: rotate(270deg);
-  }
+    }
 .q18Brotate {
-  grid-area:516/837;
+  grid-area:531/837;
   transform: rotate(270deg);
   }
 .q18Crotate {
-  grid-area:516/837;
+  grid-area:546/837;
   transform: rotate(270deg);
-  }
+    }
 .p18Arotate {
   grid-area:516/790;
   transform: rotate(270deg);
   }
 .p18Brotate {
-  grid-area:516/790;
+  grid-area:534/790;
   transform: rotate(270deg);
   }
 .p18Crotate {
-  grid-area:516/790;
+  grid-area:552/790;
   transform: rotate(270deg);
   }
 .o18Arotate {
-  grid-area:526/759;
+  grid-area:516/759;
   transform: rotate(270deg);
   }
 .o18Brotate {
-  grid-area:526/759;
+  grid-area:534/759;
   transform: rotate(270deg);
   }
 .o18Crotate {
-  grid-area:526/759;
+  grid-area:552/759;
   transform: rotate(270deg);
   }
 .m18Arotate {
-  grid-area:520/682;
+  grid-area:516/682;
   transform: rotate(270deg);
   }
 .m18Brotate {
-  grid-area:520/682;
+  grid-area:534/682;
   transform: rotate(270deg);
   }
 .m18Crotate {
-  grid-area:520/682;
+  grid-area:552/682;
   transform: rotate(270deg);
   }
 .l18Arotate {
-  grid-area:515/640;
+  grid-area:516/640;
   transform: rotate(270deg);
   }
 .l18Brotate {
-  grid-area:515/640;
+  grid-area:534/640;
   transform: rotate(270deg);
   }
 .l18Crotate {
-  grid-area:515/640;
+  grid-area:552/640;
   transform: rotate(270deg);
   }
 .k18Arotate {
-  grid-area:520/601;
+  grid-area:516/601;
   transform: rotate(270deg);
   }
 .k18Brotate {
-  grid-area:520/601;
+  grid-area:534/601;
   transform: rotate(270deg);
   }
 .k18Crotate {
-  grid-area:520/601;
+  grid-area:552/601;
   transform: rotate(270deg);
   }
 .j18Arotate {
-  grid-area:530/570;
+  grid-area:516/570;
   transform: rotate(270deg);
   }
 .j18Brotate {
-  grid-area:530/570;
+  grid-area:534/570;
   transform: rotate(270deg);
   }
 .j18Crotate {
-  grid-area:530/570;
+  grid-area:552/570;
   transform: rotate(270deg);
   }
 .i19Arotate {
-  grid-area:525/532;
+  grid-area:516/532;
   transform: rotate(270deg);
   }
 .i19Brotate {
-  grid-area:525/532;
+  grid-area:534/532;
   transform: rotate(270deg);
   }
 .i19Crotate {
-  grid-area:525/532;
+  grid-area:552/532;
   transform: rotate(270deg);
   }
+
+
+
+
+
 .h19Arotate {
   grid-area:522/485;
   transform: rotate(270deg);

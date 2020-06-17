@@ -336,7 +336,7 @@ Inputs -
 
     $("#p18").click(function() {  
       position = "YellowHelmet";
-      space = 1
+      space = 3
       alert ("This p18");
       checkspace ("p18rotate"); 
     });
