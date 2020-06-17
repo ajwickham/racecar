@@ -1,0 +1,676 @@
+
+/*Vehicle Selector Specific*/
+li.borderless { 
+  border-top: 0 none; 
+}
+
+.carsize {
+  height: 40vh;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center, center;
+}
+.cartop {
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center, center;
+}
+
+
+.RedDodgeViperfront {
+  background-image: url("../img/RedDodgeViper/Front.png");}
+.RedDodgeViperright {
+  background-image: url("../img/RedDodgeViper/Right.png");}
+.RedDodgeViperback {
+  background-image: url("../img/RedDodgeViper/Rear.png");}
+.RedDodgeVipertop {
+  background-image: url("../img/RedDodgeViper/Top.png");}
+.RedDodgeViperleft {
+  background-image: url("../img/RedDodgeViper/Left.png");}
+
+.BigwheelCorvettefront{
+  background-image: url("../img/BigwheelCorvette/front.png");}
+.BigwheelCorvetteright {
+  background-image: url("../img/BigwheelCorvette/right.png");}
+.BigwheelCorvetteback {
+  background-image: url("../img/BigwheelCorvette/rear.png");}
+.BigwheelCorvettetop {
+  background-image: url("../img/BigwheelCorvette/top.png");}
+.BigwheelCorvetteleft {
+  background-image: url("../img/BigwheelCorvette/left.png");}
+
+.HighMountEnginefront{
+  background-image: url("../img/HighMountEngine/front.png");}
+.HighMountEngineright {
+  background-image: url("../img/HighMountEngine/right.png");}
+.HighMountEngineback {
+  background-image: url("../img/HighMountEngine/rear.png");}
+.HighMountEnginetop {
+  background-image: url("../img/HighMountEngine/top.png");}
+.HighMountEngineleft {
+  background-image: url("../img/HighMountEngine/left.jpg");}
+ 
+.Peerless1911Roadsterfront{
+  background-image: url("../img/Peerless1911Roadster/front.png");}
+.Peerless1911Roadsterright {
+  background-image: url("../img/Peerless1911Roadster/right.png");}
+.Peerless1911Roadsterback {
+  background-image: url("../img/Peerless1911Roadster/rear.png");}
+.Peerless1911Roadstertop {
+  background-image: url("../img/Peerless1911Roadster/top.png");}
+.Peerless1911Roadsterleft {
+  background-image: url("../img/Peerless1911Roadster/left.png");}
+
+.QuarryTruckfront{
+  background-image: url("../img/QuarryTruck/front.png");}
+.QuarryTruckright {
+  background-image: url("../img/QuarryTruck/right.png");}
+.QuarryTruckback {
+  background-image: url("../img/QuarryTruck/rear.png");}
+.QuarryTrucktop {
+  background-image: url("../img/QuarryTruck/top.png");}
+.QuarryTruckleft {
+  background-image: url("../img/QuarryTruck/left.png");}
+
+.RedVolkswagenBeetlefront{
+  background-image: url("../img/RedVolkswagenBeetle/front.png");}
+.RedVolkswagenBeetleright {
+  background-image: url("../img/RedVolkswagenBeetle/right.png");}
+.RedVolkswagenBeetleback {
+  background-image: url("../img/RedVolkswagenBeetle//rear.png");}
+.RedVolkswagenBeetletop {
+  background-image: url("../img/RedVolkswagenBeetle/top.jpg");}
+.RedVolkswagenBeetleleft {
+  background-image: url("../img/RedVolkswagenBeetle/left.png");}  
+
+.YellowCadillacfront{
+  background-image: url("../img/YellowCadillac/front.png");}
+.YellowCadillacright {
+  background-image: url("../img/YellowCadillac/right.png");}
+.YellowCadillacback {
+  background-image: url("../img/YellowCadillac/rear.png");}
+.YellowCadillactop {
+  background-image: url("../img/YellowCadillac/top.png");}
+.YellowCadillacleft {
+  background-image: url("../img/YellowCadillac/left.png");}  
+
+.YellowFordFocusfront{
+  background-image: url("../img/YellowFordFocus/front.png");}
+.YellowFordFocusright {
+  background-image: url("../img/YellowFordFocus/right.png");}
+.YellowFordFocusback {
+  background-image: url("../img/YellowFordFocus/rear.png");}
+.YellowFordFocustop {
+  background-image: url("../img/YellowFordFocus/top.jpg");}
+.YellowFordFocusleft {
+  background-image: url("../img/YellowFordFocus/left.png");}  
+
+/* Track specific */
+
+
+.pagecontainer {
+  display: grid;
+  width: 100vw;
+  height: 99vw;
+  grid-template-columns: repeat(1000, 0.1vw);
+  grid-template-rows: repeat(1000, 0.1vw);
+  /*background-color: greenyellow;*/
+  position: absolute
+}
+
+.side {
+  grid-column: 1 /200;
+  grid-row:1/600;
+  background-color: greenyellow;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.stack {
+  grid-area: 300/1;
+   }
+.inner-stacks {
+  width: 25.5vw;
+  height: 10vw;
+  background-image: url("../img/Cardstacks/Bothstacks.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+ }
+ 
+.flip-card {
+  background-color: transparent;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden; /* For some reason setting visibility for front card stopped working*/
+  transition: transform 10s;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+  perspective: 100px; /* Remove this if you don't want the 3D effect */
+}
+
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 27vw;
+  height: 13vw;
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 13.5vw;
+  height: 60%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the back side Ironically this is the side of the card with the picture, usually known as the front!*/
+.flip-card-back {
+  transform: rotateY(180deg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top left;
+} 
+
+.back-stand-in {  /*This replaces the flip-card-back so the flip-card back can be removed and the
+                    next flip-card-back brought into place*/
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 27vw;
+  height: 7.5vw;
+  background-position: top right;
+}
+
+
+.RedHelmet {
+  background-image: url("../img/Cardstacks/Discards/RedHelmetcard.png"); 
+}
+.BlueHelmet {
+  background-image: url("../img/Cardstacks/Discards/BlueHelmetcard.png"); 
+}
+.YellowHelmet{
+  background-image: url("../img/Cardstacks/Discards/YellowHelmetcard.png"); 
+}
+.RedFlag{
+  background-image: url("../img/Cardstacks/Discards/RedFlagcard.png"); 
+}
+.GreenFlag{
+  background-image: url("../img/Cardstacks/Discards/Greenflagcard.png"); 
+}
+.YellowFlag{
+  background-image: url("../img/Cardstacks/Discards/YellowFlagcard.png"); 
+}
+.RedTyre{
+  background-image: url("../img/Cardstacks/Discards/RedTyrecard.png"); 
+}
+.BlueTyre{
+  background-image: url("../img/Cardstacks/Discards/bluetyrecard.png"); 
+}
+.GreenTyre{
+  background-image: url("../img/Cardstacks/Discards/Greentyrecard.png"); 
+}
+.RedRacecar{
+  background-image: url("../img/Cardstacks/Discards/RedRacecarcard.png"); 
+}
+.BlueRacecar{
+  background-image: url("../img/Cardstacks/Discards/BlueRacecarcard.png"); 
+}
+.GreenRacecar{
+  background-image: url("../img/Cardstacks/Discards/GreenRacecarcard.png"); 
+}
+.PurpleRacecar{
+  background-image: url("../img/Cardstacks/Discards/PurpleRacecarcard.png"); 
+}
+.YellowRacecar{
+  background-image: url("../img/Cardstacks/Discards/YellowRacecarcard.png"); 
+}
+
+
+.main {
+  grid-column: 200/1000;
+  grid-row:1/600;
+}
+.square {  /*class attached to grid areas to hold icons for example e2box*/
+  z-index: 20;
+  position: absolute;
+}
+.rotate {
+  width: 3.5vw;
+  height: 10vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute; 
+  transform-origin: top center;
+}
+
+
+.s17 {
+  grid-area:500/700;
+}
+.r18box {
+  grid-area: 512/868;
+}
+.q18box {
+  grid-area: 516/837/700/1000;
+  background-color: blue;
+  z-index: 20;
+}
+.q18rotate {
+  grid-area: 545/837;
+  transform: rotate(265deg);
+}
+
+.p18box {
+  grid-area: 516/790;
+}
+
+
+.o18box {
+  grid-area: 526/759;
+}
+.o18rotate {
+  grid-area: 545/755;
+  transform: rotate(265deg);
+}
+
+.m18box {
+  grid-area: 520/682;
+}
+.l18box {
+  grid-area: 515/640;
+}
+.k18box {
+  grid-area: 520/601;
+}
+.j18box {
+  grid-area: 530/570;
+}
+.i19box {
+  grid-area: 525/532;
+}
+.h19box {
+  grid-area: 522/485;
+}
+.g19box {
+  grid-area: 527/455;
+}
+.f19box {
+  grid-area: 527/405;
+}
+.e19box {
+  grid-area: 527/367;
+}
+.d19box {
+  grid-area: 520/330;
+}
+.c18box {
+  grid-area: 512/298;
+}
+.c17box {
+  grid-area: 472/265;
+}
+.c16box {
+  grid-area: 431/263;
+}
+.c13box {
+  grid-area: 364/315;
+}
+.d12box {
+  grid-area: 337/341;
+}
+.d11box {
+  grid-area: 293/330;
+}
+.d10box {
+  grid-area: 255/318;
+}
+.c9box {
+  grid-area: 218/298;
+}
+.c7box {
+  grid-area: 190/275;
+}
+.c6box {
+  grid-area: 145/260;
+}
+.c5box {
+  grid-area: 115/270;
+}
+.c3box {
+  grid-area: 75/280;
+}
+.d3box {
+  grid-area: 45/310;
+}
+.e2box {
+  grid-area: 30/345; 
+}
+.f2box {
+  grid-area: 40/398;
+}
+.g3box {
+  grid-area: 55/425;
+}
+.g4box {
+  grid-area: 83/458;
+}
+.h5box {
+  grid-area: 123/470;
+}
+.h6box {
+  grid-area: 163/470;
+ }
+.g8box {
+  grid-area: 201/462;
+ }
+.g9box {
+  grid-area: 230/440;
+}
+.f10box {
+  grid-area: 263/420;
+}
+.f11box {
+  grid-area: 300/410;
+}
+.g12box {
+  grid-area: 330/418;
+}
+.g14box {
+  grid-area: 370/465;
+}
+.h14box {
+  grid-area: 370/496;
+}
+.i13box {
+  grid-area: 350/530;
+}
+.j12box {
+  grid-area: 312/547;
+}
+.j10box {
+  grid-area: 279/550;
+}
+.j9box {
+  grid-area: 238/558;
+}
+.j8box {
+  grid-area: 191/555;
+}
+.j6box {
+  grid-area: 153/550;
+}
+.j5box {
+  grid-area: 120/565;
+}
+.k3box {
+  grid-area: 50/607;
+}
+.l2box {
+  grid-area: 35/632;
+}
+.m2box {
+  grid-area: 37/677;
+}
+.n2box {
+  grid-area: 28/720;
+}
+.o2box {
+  grid-area: 28/752;
+}
+.p2box {
+  grid-area: 34/792;
+}
+.q2box {
+  grid-area: 33/827;
+}
+.q3box {
+  grid-area: 42/858;
+}
+.r3box {
+  grid-area: 59/893;
+}
+.s4box {
+  grid-area: 90/910;
+}
+.s5box {
+  grid-area: 140/921;
+}
+.r6box {
+  grid-area: 170/895;
+}
+.q7box {
+  grid-area: 192/858;
+}
+.q8box {
+  grid-area: 202/832;
+}
+.p8box {
+  grid-area: 205/788;
+}
+.o8box {
+  grid-area: 215/751;
+}
+.n8box {
+  grid-area: 218/718;
+}
+.m8box {
+  grid-area: 217/672;
+}
+.l9box {
+  grid-area: 229/639;
+}
+.l10box {
+  grid-area: 253/615;
+}
+.l11box {
+  grid-area: 300/637;
+}
+.l12box {
+  grid-area: 322/656;
+}
+.m12box {
+  grid-area: 325/696;
+}
+.n12box {
+  grid-area: 310/735;
+}
+.o11box {
+  grid-area: 300/769;
+}
+.p11box {
+  grid-area: 295/812;
+}
+.q11box {
+  grid-area: 270/848;
+}
+.s12box {
+  grid-area: 311/910;
+}
+.s13box {
+  grid-area: 340/910;
+}
+.s14box {
+  grid-area: 396/935;
+}
+
+
+
+/* These are the locators for the divs for the cars*/
+.s18Arotate {
+  grid-area:510/888;
+  transform: rotate(210deg);
+  }
+.s18Brotate {
+  grid-area:535/910;
+  transform: rotate(220deg);
+  }
+.r18Arotate {
+  grid-area:512/868;
+  transform: rotate(270deg);
+  }
+.r18Brotate {
+  grid-area:512/868;
+  transform: rotate(270deg);
+  }
+.r18Crotate {
+  grid-area:512/868;
+  transform: rotate(270deg);
+  }
+.q18Arotate {
+  grid-area:516/837;
+  transform: rotate(270deg);
+  }
+.q18Brotate {
+  grid-area:516/837;
+  transform: rotate(270deg);
+  }
+.q18Crotate {
+  grid-area:516/837;
+  transform: rotate(270deg);
+  }
+.p18Arotate {
+  grid-area:516/790;
+  transform: rotate(270deg);
+  }
+.p18Brotate {
+  grid-area:516/790;
+  transform: rotate(270deg);
+  }
+.p18Crotate {
+  grid-area:516/790;
+  transform: rotate(270deg);
+  }
+.o18Arotate {
+  grid-area:526/759;
+  transform: rotate(270deg);
+  }
+.o18Brotate {
+  grid-area:526/759;
+  transform: rotate(270deg);
+  }
+.o18Crotate {
+  grid-area:526/759;
+  transform: rotate(270deg);
+  }
+.m18Arotate {
+  grid-area:520/682;
+  transform: rotate(270deg);
+  }
+.m18Brotate {
+  grid-area:520/682;
+  transform: rotate(270deg);
+  }
+.m18Crotate {
+  grid-area:520/682;
+  transform: rotate(270deg);
+  }
+.l18Arotate {
+  grid-area:515/640;
+  transform: rotate(270deg);
+  }
+.l18Brotate {
+  grid-area:515/640;
+  transform: rotate(270deg);
+  }
+.l18Crotate {
+  grid-area:515/640;
+  transform: rotate(270deg);
+  }
+.k18Arotate {
+  grid-area:520/601;
+  transform: rotate(270deg);
+  }
+.k18Brotate {
+  grid-area:520/601;
+  transform: rotate(270deg);
+  }
+.k18Crotate {
+  grid-area:520/601;
+  transform: rotate(270deg);
+  }
+.j18Arotate {
+  grid-area:530/570;
+  transform: rotate(270deg);
+  }
+.j18Brotate {
+  grid-area:530/570;
+  transform: rotate(270deg);
+  }
+.j18Crotate {
+  grid-area:530/570;
+  transform: rotate(270deg);
+  }
+.i19Arotate {
+  grid-area:525/532;
+  transform: rotate(270deg);
+  }
+.i19Brotate {
+  grid-area:525/532;
+  transform: rotate(270deg);
+  }
+.i19Crotate {
+  grid-area:525/532;
+  transform: rotate(270deg);
+  }
+.h19Arotate {
+  grid-area:522/485;
+  transform: rotate(270deg);
+  }
+.h19Brotate {
+  grid-area:522/485;
+  transform: rotate(270deg);
+  }
+.h19Crotate {
+  grid-area:522/485;
+  transform: rotate(270deg);
+  }
+.g19Arotate {
+  grid-area:527/455;
+  transform: rotate(270deg);
+  }
+.g19Brotate {
+  grid-area:527/455;
+  transform: rotate(270deg);
+  }
+.g19Crotate {
+  grid-area:527/455;
+  transform: rotate(270deg);
+  }
+.f19Arotate {
+  grid-area:527/405;
+  transform: rotate(270deg);
+  }
+.f19Brotate {
+  grid-area:527/405;
+  transform: rotate(270deg);
+  }
+.f19Crotate {
+  grid-area:527/405;
+  transform: rotate(270deg);
+  }
+.e19Arotate {
+  grid-area:527/367;
+  transform: rotate(270deg);
+  }
+.e19Brotate {
+  grid-area:527/367;
+  transform: rotate(270deg);
+  }
+.e19Crotate {
+  grid-area:527/367;
+  transform: rotate(270deg);
+  }
+.d19Arotate {
+  grid-area:520/330;
+  transform: rotate(270deg);
+  }
+.d19Brotate {
+  grid-area:520/330;
+  transform: rotate(270deg);
+  }
+.d19Crotate {
+  grid-area:520/330;
+  transform: rotate(270deg);
+  }
+    
+    
