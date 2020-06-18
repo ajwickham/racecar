@@ -171,12 +171,15 @@ uncard=0
 previous=1
 t = 0
 
-$("button#red3").click(function() {  /* Probably should redo and not use bootstrap so it responds with grid*/
-  alert("afsfa");
-  $("div.s17rotate").addClass(x+"top");
-  $("div.s18rotate").addClass(y+"top");
+$("button#red3").click(function() {  /* This places the car on the start line. Probably should redo and not use bootstrap so it responds with grid*/
+  alert("car1 is "+x+" car2 is "+y);
+  $("div.s17Arotate").addClass(x+"top");
+  document.getElementById("s17A").style.zIndex = "15";
+  $("div.s17Crotate").addClass(y+"top");
+  document.getElementById("s17C").style.zIndex = "5";
 }); 
 
+// This is the stack of cards function
 
 $("#stack").click(function() {
   t=1-t  //determines whose turn it is
@@ -185,14 +188,14 @@ $("#stack").click(function() {
   
   count4 +=1;
   if (count4 >2) {
-      $("div.back-stand-in").removeClass(previous);
+      $("div.back-stand-in").removeClass(previous);  //Removes the card that stands in while the card is being flipped back to home position
   }
   if (uncard!=0) {
-    $("div.back-stand-in").addClass(uncard);
-    $("div.flip-card-back").removeClass(uncard);
-    $("div.flip-card-inner").removeClass("flip-card");
+    $("div.back-stand-in").addClass(uncard);  //puts previous card icon on the stand-in card
+    $("div.flip-card-back").removeClass(uncard); //removes the prevous card icon
+    $("div.flip-card-inner").removeClass("flip-card");//flips the card back to the home position
   }
-    
+                             //Chooses an icon and puts it on the card.
   previous=uncard  
   icon =  7 //((Math.random())*3)  don't forget to put this back to 32
   card=Math.round(icon)
@@ -256,7 +259,7 @@ $("#stack").click(function() {
    
   alert("Are you ready?");/*for some reason it won't do a second flip
                           without this break here. Event bubbling? */
-  $("div.flip-card-inner").addClass("flip-card");
+  $("div.flip-card-inner").addClass("flip-card");  //card is flipped
     
   });
 
@@ -266,7 +269,7 @@ $("#stack").click(function() {
 Inputs - 
     cars selected = car1selected  car2selected
     card turned = uncard
-    track square selected - tbd */
+    track square selected - location and space */
 
     var x = localStorage.getItem("transfer1"); //brings car choices across from selector page
     var y = localStorage.getItem("transfer2");
@@ -274,86 +277,129 @@ Inputs -
     car1space = 0
     car2space = 0
 
-    car1oldlocation = "p18rotate" 
-    car2oldlocation = "p18rotate"   //remove this once first go is sorted
-  function checkspace(location) {
-    alert("car 1 is "+x);
-    alert(location+" is the location");
-    alert("This is "+turn+" turn");
-    alert(space);
+    car1oldlocation = "s18A" //Sets cars to split on first square
+    car2oldlocation = "s17C"   
+
+  function checkspace(location) {    //Big function that moves cars.  Probably should be broken out into sub functions
+    
     if (position != uncard) {
       alert("no that's "+position+" not "+uncard);
     }
-    if (turn===1) {
+    else if (turn===1) {
       if ((space-car1space)>11) {
         alert("Did you miss a "+uncard+" before that?");
       }
       else {
-        document.getElementById(car1oldlocation).style.zIndex = "1";  
+        if (location===car2oldlocation) {
+          document.getElementById(car2oldlocation).style.zIndex = "-1";  
+        
+          $("div."+car2oldlocation).removeClass(y+"top"); //This moves car2 to C
+          location = location.substring(0,location.length-1)+"C"
+          document.getElementById(location).style.zIndex = "5";  
+          $("#"+location).addClass(y+"top");
+          location = location.substring(0,location.length-1)+"A";//This sets up car 1 to go to A
+        }
+        document.getElementById(car1oldlocation).style.zIndex = "-1";  //This puts car 1 in the right place
         $("div."+car1oldlocation).removeClass(x+"top");
-        alert("yes");
         document.getElementById(location).style.zIndex = "5";  
-        $("div."+location).addClass(x+"top");  //got to remove class from previous place
-        car1oldlocation = location
+        $("#"+location).addClass(x+"top");
+        
+        car1oldlocation = location //This sets up the information for the next turn
         car1space = space
       }
       
     }    
-    if (turn===2) {
+    else if (turn===2) {
       if ((space-car2space)>11) {
         alert("Did you miss a "+uncard+" before that?");
       }
       else {
-        document.getElementById(car2oldlocation).style.zIndex = "1";  
+        if (location===car1oldlocation) {
+          document.getElementById(car1oldlocation).style.zIndex = "-1";  
+        
+          $("div."+car1oldlocation).removeClass(x+"top"); //This moves car1 to A
+          location = location.substring(0,location.length-1)+"A"
+          document.getElementById(location).style.zIndex = "5";  
+          $("#"+location).addClass(x+"top");
+          
+          location = location.substring(0,location.length-1)+"C" //This sets up car 2 to go to C
+        }
+        document.getElementById(car2oldlocation).style.zIndex = "-1";  //This puts car 1 in the right place
         $("div."+car2oldlocation).removeClass(x+"top");
-        alert("yes");
         document.getElementById(location).style.zIndex = "5";  
-        $("div."+location).addClass(x+"top");  //got to remove class from previous place
-        car2oldlocation = location
-        car2space = space
+        $("#"+location).addClass(y+"top");
+        
+        car1oldlocation = location //This sets up the information for the next turn
+        car1space = space
       }
     }
     };
     
 
 
-    // Turn starts by clicking pile of cards.
+    // Turn starts by clicking pile of cards.  Then click the appropriate icon. This kicks off the big move car function above
 
     $("#r18").click(function() {  
       /*position = "RedHelmet";
-      space = 1*/
-      alert ("This is r18");
-      checkspace (r18rotate); 
+      space = 1
+      checkspace("r18B"); */
+      alert(turn);
+      if (turn===1) {
+        //document.getElementById(car1oldlocation).style.zIndex = "-1";  //This removes car 1 from start line        $("div."+car1oldlocation).removeClass(x+"top");
+        document.getElementById("#r18A").style.zIndex = "5";  
+        $("#r18A").addClass(x+"top");
+      }
     });
 
     $("#q18").click(function() {  
-      /*position = "RedHelmet";
-      space = 1
-      checkspace ("r18rotate");*/ 
-      alert ("this is q18");
-      /*$("#q18").addclass("q18rotate");*/
-  });
+      position = "BlueTyre";
+      space = 2
+      checkspace("q18B"); 
+    });
 
     $("#p18").click(function() {  
       position = "YellowHelmet";
       space = 3
-      alert ("This p18");
-      checkspace ("p18rotate"); 
+      checkspace("p18B"); 
     });
 
-   $("#g3").click(function() {  
-      position = "RedHelmet";
-      space = 45
-      
-     
-      alert("car1 = "+x+" car2 = "+y);
-      alert("class to add "+(x+"top"));
-      
-      checkspace ();
-      alert(turn);
-       
-   });
- 
+    $("#o18").click(function() {  
+      position = "GreenFlag";
+      space = 4
+      checkspace("o18B"); 
+    });
+
+    $("#m18").click(function() {  
+      position = "RedTyre";
+      space = 6
+      checkspace("m18B"); 
+    });
+
+    $("#l18").click(function() {  
+      position = "YellowFlag";
+      space = 7
+      checkspace("l18B"); 
+    });
+
+    $("#k18").click(function() {  
+      position = "BlueHelmet";
+      space = 8
+      checkspace("k18B"); 
+    });
+
+    $("#j18").click(function() {  
+      position = "RedFlag";
+      space = 9
+      checkspace("j18B"); 
+    });
+
+    $("#i19").click(function() {  
+      position = "GreenTyre";
+      space = 10
+      checkspace("i19B"); 
+    });
+
+    
 
 
 });//end of document 

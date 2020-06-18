@@ -19,15 +19,15 @@ li.borderless {
 
 
 .RedDodgeViperfront {
-  background-image: url("../img/RedDodgeViper/Front.png");}
+  background-image: url("../img/RedDodgeViper/front.png");}
 .RedDodgeViperright {
-  background-image: url("../img/RedDodgeViper/Right.png");}
+  background-image: url("../img/RedDodgeViper/right.png");}
 .RedDodgeViperback {
-  background-image: url("../img/RedDodgeViper/Rear.png");}
+  background-image: url("../img/RedDodgeViper/rear.png");}
 .RedDodgeVipertop {
-  background-image: url("../img/RedDodgeViper/Top.png");}
+  background-image: url("../img/RedDodgeViper/top.png");}
 .RedDodgeViperleft {
-  background-image: url("../img/RedDodgeViper/Left.png");}
+  background-image: url("../img/RedDodgeViper/left.png");}
 
 .BigwheelCorvettefront{
   background-image: url("../img/BigwheelCorvette/front.png");}
@@ -241,7 +241,7 @@ li.borderless {
   background-size: contain;
   position: absolute; 
   transform-origin: top center;
-  z-index: 5;
+  z-index: -1;
 }
 
 
@@ -285,16 +285,15 @@ li.borderless {
 .s17Arotate {
   grid-area:510/888;
   transform: rotate(210deg);
-  background-image: url(../img/YellowCadillac/top.png);
   }
 .s17Crotate {
   grid-area:535/910;
   transform: rotate(220deg);
-  background-image: url(../img/YellowCadillac/top.png);
   }
 .r18Arotate {
   grid-area:518/868;
   transform: rotate(220deg);
+  z-index: 10;
   }
 .r18Brotate {
   grid-area:530/868;
