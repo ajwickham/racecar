@@ -277,7 +277,7 @@ Inputs -
     car1space = 0
     car2space = 0
 
-    car1oldlocation = "s18A" //Sets cars to split on first square
+    car1oldlocation = "s17A" //Sets cars to split on first square
     car2oldlocation = "s17C"   
 
   function checkspace(location) {    //Big function that moves cars.  Probably should be broken out into sub functions
@@ -290,6 +290,7 @@ Inputs -
         alert("Did you miss a "+uncard+" before that?");
       }
       else {
+        alert(location);
         if (location===car2oldlocation) {
           document.getElementById(car2oldlocation).style.zIndex = "-1";  
         
