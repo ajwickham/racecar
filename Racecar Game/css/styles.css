@@ -236,7 +236,9 @@ li.borderless {
 }
 .rotate {
   width: 3.5vw;
-  height: 10vw;
+  height: 8vw;
+  padding: 0%;
+  margin: 0cm;
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute; 
@@ -305,7 +307,7 @@ li.borderless {
   }
 .q18Arotate {
   grid-area:516/837;
-  transform: rotate(270deg);
+  transform: rotate(250deg);
     }
 .q18Brotate {
   grid-area:531/837;
