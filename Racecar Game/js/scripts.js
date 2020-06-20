@@ -197,9 +197,9 @@ $("#stack").click(function() {
   }
                              //Chooses an icon and puts it on the card.
   previous=uncard  
-  icon = 5 // ((Math.random())*15)  //don't forget to put this back to 32
+  icon = ((Math.random())*6)  //don't forget to put this back to 32
   card=Math.round(icon) 
-
+  
   if (card<=3) {
     $("div.flip-card-back").addClass("RedHelmet");
     uncard="RedHelmet";
@@ -277,10 +277,10 @@ Inputs -
     car1space = 0
     car2space = 0
 
-    car1oldlocation = "s17A" //Sets cars to split on first square
+    car1oldlocation = "s17A" //Tells function how to remove cars from start line
     car2oldlocation = "s17C"   
 
-  function checkspace(location) {    //Big function that moves cars.  Probably should be broken out into sub functions
+  function checkspace(locate) {    //Big function that moves cars.  Probably should be broken out into sub functions
     alert("this is turn"+turn);
     if (position != uncard) {
       alert("no that's "+position+" not "+uncard);  // Something about stop or go to end of function
@@ -290,28 +290,35 @@ Inputs -
         alert("Did you miss a "+uncard+" before that?");
       }
       else {
-        alert("car1 is going to "+location);
+        alert("car1 is going to "+locate);
         alert("car2 is at "+car2oldlocation);
         
-        if (location===car2oldlocation) {
-          alert("div."+car2oldlocation+" is the remove class alert");
-          $("div."+car2oldlocation).removeClass(y+"top"); //This moves car2 to C
+        if (space===car2space) {
+          alert("."+car2oldlocation+" is the remove class alert");
+          $("."+car2oldlocation+"rotate").removeClass(y+"top"); //This moves car2 to C
           document.getElementById(car2oldlocation).style.zIndex = "-1";  
           alert("car 2 removed")
           car2oldlocation = car2oldlocation.substring(0,car2oldlocation.length-1)+"C"
           document.getElementById(car2oldlocation).style.zIndex = "5";  
           $("#"+car2oldlocation).addClass(y+"top");
           alert("car 2 put in new place")
-          location = location.substring(0,location.length-1)+"A";//This sets up car 1 to go to A
+          locate = locate.substring(0,locate.length-1)+"A";//This sets up car 1 to go to A
           }
 
-        $("div."+car1oldlocation).removeClass(x+"top");
+        var car1oldlocmadeA=car1oldlocation.substring(0,car1oldlocation.length-1)+"A"  //When two cars have been on the same square, car1oldlocation can
+        $("."+car1oldlocmadeA+"rotate").removeClass(x+"top");                         // sometimes be set to B, even though the code above would seem to 
+                                                                                      //set it to A. This is a hack that removes the image from
+                                                                                      // A every time, whether it is needed or not.  To fix in future. 
+                                                                                      // Equivalent hack is also done on turn 2
+   
+        $("."+car1oldlocation+"rotate").removeClass(x+"top");
         document.getElementById(car1oldlocation).style.zIndex = "-1";  //This puts car 1 in the right place
         alert("car1old location is "+car1oldlocation)
         alert("stop1");
-        document.getElementById(location).style.zIndex = "5";  
-        $("#"+location).addClass(x+"top");
-        car1oldlocation = location //This sets up the information for the next turn
+        document.getElementById(locate).style.zIndex = "5";  
+        $("#"+locate).addClass(x+"top");
+        car1veryoldlocation=car1oldlocation
+        car1oldlocation = locate //This sets up the information for the next turn
         car1space = space
       }
       
@@ -321,22 +328,27 @@ Inputs -
         alert("Did you miss a "+uncard+" before that?");
       }
       else {
-        if (location===car1oldlocation) {
+        if (space===car1space) {
           document.getElementById(car1oldlocation).style.zIndex = "-1";  //Is this triggering on turn 1?
         
-          $("div."+car1oldlocation).removeClass(x+"top"); //This moves car1 to A
-          location = location.substring(0,location.length-1)+"A"
-          document.getElementById(location).style.zIndex = "5";  
-          $("#"+location).addClass(x+"top");
+          $("#"+car1oldlocation).removeClass(x+"top"); //This moves car1 to A
+          locate = locate.substring(0,locate.length-1)+"A"
+          document.getElementById(locate).style.zIndex = "5";  
+          $("#"+locate).addClass(x+"top");
           
-          location = location.substring(0,location.length-1)+"C" //This sets up car 2 to go to C
+          locate = locate.substring(0,locate.length-1)+"C" //This sets up car 2 to go to C
         }
-        $("div."+car2oldlocation).removeClass(y+"top");
+
+        var car2oldlocmadeC=car2oldlocation.substring(0,car2oldlocation.length-1)+"C"  //This is the car2 version of the hack described above
+        $("."+car2oldlocmadeC+"rotate").removeClass(x+"top");
+
+
+        $("#"+car2oldlocation).removeClass(y+"top");
         document.getElementById(car2oldlocation).style.zIndex = "-1";  //This puts car 2 in the right place
-        document.getElementById(location).style.zIndex = "5";  
-        $("#"+location).addClass(y+"top");
+        document.getElementById(locate).style.zIndex = "5";  
+        $("#"+locate).addClass(y+"top");
        
-        car2oldlocation = location //This sets up the information for the next turn
+        car2oldlocation = locate //This sets up the information for the next turn
         car2space = space
       }
     }
