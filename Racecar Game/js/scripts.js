@@ -197,8 +197,8 @@ $("#stack").click(function() {
   }
                              //Chooses an icon and puts it on the card.
   previous=uncard  
-  icon =  7 //((Math.random())*3)  don't forget to put this back to 32
-  card=Math.round(icon)
+  icon = 5 // ((Math.random())*15)  //don't forget to put this back to 32
+  card=Math.round(icon) 
 
   if (card<=3) {
     $("div.flip-card-back").addClass("RedHelmet");
@@ -281,30 +281,36 @@ Inputs -
     car2oldlocation = "s17C"   
 
   function checkspace(location) {    //Big function that moves cars.  Probably should be broken out into sub functions
-    
+    alert("this is turn"+turn);
     if (position != uncard) {
-      alert("no that's "+position+" not "+uncard);
+      alert("no that's "+position+" not "+uncard);  // Something about stop or go to end of function
     }
     else if (turn===1) {
       if ((space-car1space)>11) {
         alert("Did you miss a "+uncard+" before that?");
       }
       else {
-        alert(location);
-        if (location===car2oldlocation) {
-          document.getElementById(car2oldlocation).style.zIndex = "-1";  
+        alert("car1 is going to "+location);
+        alert("car2 is at "+car2oldlocation);
         
+        if (location===car2oldlocation) {
+          alert("div."+car2oldlocation+" is the remove class alert");
           $("div."+car2oldlocation).removeClass(y+"top"); //This moves car2 to C
-          location = location.substring(0,location.length-1)+"C"
-          document.getElementById(location).style.zIndex = "5";  
-          $("#"+location).addClass(y+"top");
+          document.getElementById(car2oldlocation).style.zIndex = "-1";  
+          alert("car 2 removed")
+          car2oldlocation = car2oldlocation.substring(0,car2oldlocation.length-1)+"C"
+          document.getElementById(car2oldlocation).style.zIndex = "5";  
+          $("#"+car2oldlocation).addClass(y+"top");
+          alert("car 2 put in new place")
           location = location.substring(0,location.length-1)+"A";//This sets up car 1 to go to A
-        }
-        document.getElementById(car1oldlocation).style.zIndex = "-1";  //This puts car 1 in the right place
+          }
+
         $("div."+car1oldlocation).removeClass(x+"top");
+        document.getElementById(car1oldlocation).style.zIndex = "-1";  //This puts car 1 in the right place
+        alert("car1old location is "+car1oldlocation)
+        alert("stop1");
         document.getElementById(location).style.zIndex = "5";  
         $("#"+location).addClass(x+"top");
-        
         car1oldlocation = location //This sets up the information for the next turn
         car1space = space
       }
@@ -316,7 +322,7 @@ Inputs -
       }
       else {
         if (location===car1oldlocation) {
-          document.getElementById(car1oldlocation).style.zIndex = "-1";  
+          document.getElementById(car1oldlocation).style.zIndex = "-1";  //Is this triggering on turn 1?
         
           $("div."+car1oldlocation).removeClass(x+"top"); //This moves car1 to A
           location = location.substring(0,location.length-1)+"A"
@@ -325,31 +331,46 @@ Inputs -
           
           location = location.substring(0,location.length-1)+"C" //This sets up car 2 to go to C
         }
-        document.getElementById(car2oldlocation).style.zIndex = "-1";  //This puts car 1 in the right place
-        $("div."+car2oldlocation).removeClass(x+"top");
+        $("div."+car2oldlocation).removeClass(y+"top");
+        document.getElementById(car2oldlocation).style.zIndex = "-1";  //This puts car 2 in the right place
         document.getElementById(location).style.zIndex = "5";  
         $("#"+location).addClass(y+"top");
-        
-        car1oldlocation = location //This sets up the information for the next turn
-        car1space = space
+       
+        car2oldlocation = location //This sets up the information for the next turn
+        car2space = space
       }
     }
     };
     
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // Turn starts by clicking pile of cards.  Then click the appropriate icon. This kicks off the big move car function above
 
     $("#r18").click(function() {  
-      /*position = "RedHelmet";
+      position = "RedHelmet";
       space = 1
-      checkspace("r18B"); */
       alert(turn);
       if (turn===1) {
-        //document.getElementById(car1oldlocation).style.zIndex = "-1";  //This removes car 1 from start line        $("div."+car1oldlocation).removeClass(x+"top");
-        document.getElementById("#r18A").style.zIndex = "5";  
-        $("#r18A").addClass(x+"top");
+        checkspace("r18A");
       }
+      if (turn===2) {
+        checkspace("r18C");
+      }
+            
     });
 
     $("#q18").click(function() {  
