@@ -197,7 +197,7 @@ $("#stack").click(function() {
   }
                              //Chooses an icon and puts it on the card.
   previous=uncard  
-  icon = ((Math.random())*27)  //don't forget to put this back to 32
+  icon = 2//((Math.random())*28)  //don't forget to put this back to 32
   card=Math.round(icon) 
   
   if (card<=3) {
@@ -294,18 +294,12 @@ Inputs -
         if (space===(car2space-1)||space===car2space||space===(car2space+1)) {
           $("."+car2oldlocation+"rotate").removeClass(y+"top"); //This moves car2 to C
           car2oldlocation = car2oldlocation.substring(0,locate.length -1)+"C";
-          alert("stop1");
           document.getElementById(car2oldlocation).style.zIndex = "-1";  
-          alert("stop 2");
           var l2 = car2oldlocation.length
-          alert(l2);
           car2oldlocation = car2oldlocation.substring(0,car2oldlocation.length -1)+"C"
-          alert("stop 3");
           document.getElementById(car2oldlocation).style.zIndex = "5";  
-          alert("stop4");
           $("#"+car2oldlocation).addClass(y+"top");
           locate = locate.substring(0,locate.length -1)+"A";//This sets up car 1 to go to A
-          alert("this should have made locate end in A.  Locate is "+locate)
           }
 
         var car1oldlocmadeA=car1oldlocation.substring(0,car1oldlocation.length -1)+"A"  //When two cars have been on the same square, car1oldlocation can
@@ -315,7 +309,6 @@ Inputs -
                                                                                       // Equivalent hack is also done on turn 2
    
         $("."+car1oldlocation+"rotate").removeClass(x+"top");
-        alert("did this remove car 1 from its previous location?")
         document.getElementById(car1oldlocation).style.zIndex = "-1";  //This puts car 1 in the right place
         document.getElementById(locate).style.zIndex = "5";  
         $("#"+locate).addClass(x+"top");
@@ -338,7 +331,6 @@ Inputs -
           locate = locate.substring(0,locate.length -1)+"A"
           document.getElementById(locate).style.zIndex = "5";  
           $("#"+locate).addClass(x+"top");
-          
           locate = locate.substring(0,locate.length -1)+"C" //This sets up car 2 to go to C
         }
 
@@ -347,7 +339,6 @@ Inputs -
         //alert("car 2 C has been removed");  
 
         $("#"+car2oldlocation).removeClass(y+"top");
-        alert("yes we're here");
         document.getElementById(car2oldlocation).style.zIndex = "-1";  //This puts car 2 in the right place
         document.getElementById(locate).style.zIndex = "5";  
         $("#"+locate).addClass(y+"top");
@@ -436,9 +427,414 @@ Inputs -
       checkspace("i19B"); 
     });
 
+    $("#h19").click(function() {  
+      position = "RedHelmet";
+      space = 11
+      checkspace("h19B"); 
+    });
+
+    $("#g19").click(function() {  
+      position = "BlueTyre";
+      space = 12
+      checkspace("g19B"); 
+    });
+
+    $("#f19").click(function() {  
+      position = "RedRacecar";
+      space = 13
+      checkspace("f19B"); 
+    });
+
+    $("#e19").click(function() {  
+      position = "YellowHelmet";
+      space = 14
+      checkspace("e19B"); 
+    });
+
+    $("#d19").click(function() {  
+      position = "GreenFlag";
+      space = 15
+      checkspace("d19B"); 
+    });
+
+    $("#c18").click(function() { 
+      position = "RedTyre";
+      space = 16
+      checkspace("c18B"); 
+    });
+
+    $("#c17").click(function() {  
+      position = "YellowFlag";
+      space = 17
+      checkspace("c17B"); 
+    });
+
+    $("#c16").click(function() {  
+      position = "BlueHelmet";
+      space = 18
+      checkspace("c16B"); 
+    });
+
+    $("#c13").click(function() {  
+      position = "RedFlag";
+      space = 19
+      checkspace("c13B"); 
+    });
+
+    $("#d12").click(function() {  
+      position = "GreenTyre";
+      space = 20
+      checkspace("d12B"); 
+    });
+
+    $("#d11").click(function() {  
+      position = "RedHelmet";
+      space = 21
+      checkspace("d11B"); 
+    });
+
+    $("#d10").click(function() {  
+      position = "BlueTyre";
+      space = 22
+      checkspace("d10B"); 
+    });
+
+    $("#c9").click(function() {  
+      position = "YellowHelmet";
+      space = 23
+      checkspace("c9B"); 
+    });
+
+    $("#c7").click(function() {  
+      position = "GreenFlag";
+      space = 24
+      checkspace("c7B"); 
+    });
+
+    $("#c6").click(function() {  
+      position = "BlueRacecar";
+      space = 25
+      checkspace("c6B"); 
+    });
     
+    $("#c5").click(function() {  
+      position = "RedTyre";
+      space = 27
+      checkspace("c5B"); 
+    });
 
+    $("#c3").click(function() {  
+      position = "YellowFlag";
+      space = 28
+      checkspace("c3B"); 
+    });
 
+    $("#d3").click(function() {  
+      position = "BlueHelmet";
+      space = 29
+      checkspace("d3B"); 
+    });
+   
+    $("#e2").click(function() {  
+      position = "RedFlag";
+      space = 30
+      checkspace("c5B"); 
+    });
+
+    $("#f2").click(function() {  
+      position = "GreenTyre";
+      space = 31
+      checkspace("f2B"); 
+    });
+
+    $("#g3").click(function() {  
+      position = "RedHelmet";
+      space = 32  //this isn't working - it thinks its too far if its on the previous red helmet
+      checkspace("j4B"); 
+    });
+
+    $("#g4").click(function() {  
+      position = "BlueTyre";
+      space = 33
+      checkspace("g4B"); 
+    });
+    
+    $("#h5").click(function() {  
+      position = "YellowHelmet";
+      space = 34
+      checkspace("h5B"); 
+    });
+
+    $("#h6").click(function() {  
+      position = "GreenFlag";
+      space = 35
+      checkspace("h6B"); 
+    });
+
+    $("#g8").click(function() {  
+      position = "RedTyre";
+      space = 36
+      checkspace("gB"); 
+    });
+
+    $("#g9").click(function() {  
+      position = "YellowFlag";
+      space = 37
+      checkspace("g9B"); 
+    });
+
+    $("#f10").click(function() {  
+      position = "GreenRacecar";
+      space = 38
+      checkspace("f10B"); 
+    });
+
+    $("#f11").click(function() {  
+      position = "BlueHelmet";
+      space = 39
+      checkspace("f11B"); 
+    });
+    
+    $("#g12").click(function() {  
+      position = "RedFlag";
+      space = 40
+      checkspace("g12B"); 
+    });
+
+    $("#g14").click(function() {  
+      position = "GreenTyre";
+      space = 41
+      checkspace("c14B"); 
+    });
+
+    $("#h14").click(function() {  
+      position = "RedHelmet";
+      space = 42
+      checkspace("h14B"); 
+    });
+    
+    $("#i13").click(function() {  
+      position = "BlueTyre";
+      space = 43
+      checkspace("i13B"); 
+    });
+
+    $("#j12").click(function() {  
+      position = "YellowHelmet";
+      space = 44
+      checkspace("j12B"); 
+    });
+
+    $("#j10").click(function() {  
+      position = "GreenFlag";
+      space = 45
+      checkspace("j10"); 
+    });
+
+    $("#j9").click(function() {  
+      position = "RedTyre";
+      space = 46
+      checkspace("j9B"); 
+    });
+
+    $("#j8").click(function() {  
+      position = "YellowFlag";
+      space = 47
+      checkspace("j8B"); 
+    });
+
+    $("#j6").click(function() {  
+      position = "BlueHelmet";
+      space = 48
+      checkspace("j6B"); 
+    });
+
+    $("#j5").click(function() {  
+      position = "RedFlag";
+      space = 49
+      checkspace("j5B"); 
+    });
+
+    $("#k3").click(function() {  
+      position = "GreenTyre";
+      space = 50
+      checkspace("k3B"); 
+    });
+
+    $("#l2").click(function() {  
+      position = "RedHelmet";
+      space = 51
+      checkspace("l2B"); 
+    });
+
+    $("#m2").click(function() {  
+      position = "PurpleRacecar";
+      space = 52
+      checkspace("m2B"); 
+    });
+
+    $("#n2").click(function() {  
+      position = "BlueTyre";
+      space = 53
+      checkspace("n2B"); 
+    });
+
+    $("#o2").click(function() {  
+      position = "YellowHelmet";
+      space = 54
+      checkspace("o2B"); 
+    });
+
+    $("#p2").click(function() {  
+      position = "GreenFlag";
+      space = 55
+      checkspace("p2B"); 
+    });
+
+    $("#q2").click(function() {  
+      position = "RedTyre";
+      space = 56
+      checkspace("q2B"); 
+    });
+    
+    $("#q3").click(function() {  
+      position = "YellowFlag";
+      space = 57
+      checkspace("q3B"); 
+    });
+    
+    $("#r3").click(function() {  
+      position = "BlueHelmet";
+      space = 58
+      checkspace("r3B"); 
+    });
+
+    $("#s4").click(function() {  
+      position = "RedFlag";
+      space = 59
+      checkspace("s4B"); 
+    });
+    
+    $("#s5").click(function() {  
+      position = "GreenTyre";
+      space = 60
+      checkspace("s5B"); 
+    });
+     
+    $("#r6").click(function() {  
+      position = "RedHelmet";
+      space = 61
+      checkspace("r11B"); 
+    });
+
+    $("#q7").click(function() {  
+      position = "YellowRacecar";
+      space = 62
+      checkspace("q7B"); 
+    });
+
+    $("#p8").click(function() {  
+      position = "BlueTyre";
+      space = 63
+      checkspace("p8B"); 
+    });
+
+    $("#o8").click(function() {  
+      position = "YellowHelmet";
+      space = 64
+      checkspace("o8B"); 
+    });
+
+    $("#n8").click(function() {  
+      position = "GreenFlag";
+      space = 65
+      checkspace("n8B"); 
+    });
+
+    $("#m8").click(function() {  
+      position = "RedTyre";
+      space = 66
+      checkspace("m8B"); 
+    });
+
+    $("#l8").click(function() {  
+      position = "YellowFlag";
+      space = 67
+      checkspace("l8B"); 
+    });
+
+    $("#l10").click(function() {  
+      position = "BlueHelmet";
+      space = 68
+      checkspace("l10B"); 
+    });
+
+    $("#l10").click(function() {  
+      position = "RedFlag";
+      space = 69
+      checkspace("l10B"); 
+    });
+
+    $("#l11").click(function() {  
+      position = "GreenTyre";
+      space = 70
+      checkspace("l11B"); 
+    });
+
+    $("#l12").click(function() {  
+      position = "RedHelmet";
+      space = 71
+      checkspace("l12B"); 
+    });
+
+    $("#m12").click(function() {  
+      position = "BlueTyre";
+      space = 72
+      checkspace("m12B"); 
+    });
+
+    $("#n12").click(function() {  
+      position = "YellowHelmet";
+      space = 73
+      checkspace("n18B"); 
+    });
+
+    $("#o11").click(function() {  
+      position = "GreenFlag";
+      space = 74
+      checkspace("o11B"); 
+    });
+
+    $("#p11").click(function() {  
+      position = "RedTyre";
+      space = 75
+      checkspace("p11B"); 
+    });
+
+    $("#q11").click(function() {  
+      position = "YellowFlag";
+      space = 76
+      checkspace("q11B"); 
+    });
+
+    $("#s12").click(function() {  
+      position = "BlueHelmet";
+      space = 77
+      checkspace("s12B"); 
+    });
+
+    $("#s13").click(function() {  
+      position = "RedFlag";
+      space = 78
+      checkspace("s13B"); 
+    });
+
+    $("#s14").click(function() {  
+      position = "GreenTyre";
+      space = 79
+      checkspace("s14B"); 
+    });
+    
 });//end of document 
 
 
