@@ -46,7 +46,9 @@ $(document).ready(function() {
       if (count1===8) {
         car1 = "HighMountEngine"
       };
+      
       $("div.car1right").addClass(car1+"right");
+      
       if (count1===9) {
         $("div.car1right").removeClass(car1+"right");
         count1=0
@@ -197,7 +199,7 @@ $("#stack").click(function() {
   }
                              //Chooses an icon and puts it on the card.
   previous=uncard  
-  icon = 2//((Math.random())*28)  //don't forget to put this back to 32
+  icon = ((Math.random())*32)  //don't forget to put this back to 32
   card=Math.round(icon) 
   
   if (card<=3) {
@@ -256,12 +258,13 @@ $("#stack").click(function() {
     $("div.flip-card-back").addClass("YellowRacecar");
     uncard="YellowRacecar"  
   }
-   
+ 
   alert("Are you ready?");/*for some reason it won't do a second flip
                           without this break here. Event bubbling? */
   $("div.flip-card-inner").addClass("flip-card");  //card is flipped
-    
-  });
+  
+});
+
 
 
 /*  GAME FUNCTIONALITY  
@@ -282,6 +285,7 @@ Inputs -
    
 
   function checkspace(locate) {    //Big function that moves cars.  Probably should be broken out into sub functions
+        
     if (position != uncard) {
       alert("no that's "+position+" not "+uncard);  // Something about stop or go to end of function
     }
@@ -289,22 +293,20 @@ Inputs -
       if ((space-car1space)>11) {
         alert("Did you miss a "+uncard+" before that?");
       }
-      else {
+      //else {
                
         if (space===(car2space-1)||space===car2space||space===(car2space+1)) {
-          $("."+car2oldlocation+"rotate").removeClass(y+"top"); //This moves car2 to C
-          car2oldlocation = car2oldlocation.substring(0,locate.length -1)+"C";
-          document.getElementById(car2oldlocation).style.zIndex = "-1";  
-          var l2 = car2oldlocation.length
-          car2oldlocation = car2oldlocation.substring(0,car2oldlocation.length -1)+"C"
-          document.getElementById(car2oldlocation).style.zIndex = "5";  
-          $("#"+car2oldlocation).addClass(y+"top");
+          $("."+car2oldlocation+"rotate").removeClass(y+"top"); //This removes picture of car2
+          document.getElementById(car2oldlocation).style.zIndex = "-1";  // puts div to the back
+          car2oldlocation = car2oldlocation.substring(0,car2oldlocation.length -1)+"C";  //changes the loction of car 2 to C  (irrespective of the length of the string)
+          document.getElementById(car2oldlocation).style.zIndex = "5"; //brings div to the front  
+          $("#"+car2oldlocation).addClass(y+"top");  //adds picture of car 2
           locate = locate.substring(0,locate.length -1)+"A";//This sets up car 1 to go to A
           }
 
         var car1oldlocmadeA=car1oldlocation.substring(0,car1oldlocation.length -1)+"A"  //When two cars have been on the same square, car1oldlocation can
         $("."+car1oldlocmadeA+"rotate").removeClass(x+"top");                         // sometimes be set to B, even though the code above would seem to 
-        //alert("car 1 A has been removed "+"."+car1oldlocmadeA+"rotate");                                                                              //set it to A. This is a hack that removes the image from
+        //alert("car 1 A has been removed "+"."+car1oldlocmadeA+"rotate");            //set it to A. This is a hack that removes the image from
                                                                                       // A every time, whether it is needed or not.  To fix in future. 
                                                                                       // Equivalent hack is also done on turn 2
    
@@ -315,22 +317,21 @@ Inputs -
         
         car1oldlocation = locate //This sets up the information for the next turn
         car1space = space
-      }
+        //turn=0  Make this active to prevent a player making multiple moves per turn
+      //}
       
     }    
     else if (turn===2) {
       if ((space-car2space)>11) {
         alert("Did you miss a "+uncard+" before that?");
       }
-      else {
+      //else {
         if (space===(car1space-1)||space===car1space||space===(car1space+1)) {
-          document.getElementById(car1oldlocation).style.zIndex = "-1";  //Is this triggering on turn 1?
-        
-          $("#"+car1oldlocation).removeClass(x+"top"); //This moves car1 to A
-          car1oldlocation = car1oldlocation.substring(0,locate.length -1)+"A";
-          locate = locate.substring(0,locate.length -1)+"A"
-          document.getElementById(locate).style.zIndex = "5";  
-          $("#"+locate).addClass(x+"top");
+          document.getElementById(car1oldlocation).style.zIndex = "-1";  
+          $("#"+car1oldlocation).removeClass(x+"top"); //removes car1 from B
+          car1oldlocation = car1oldlocation.substring(0,car1oldlocation.length -1)+"A"; //Changes car1 location to A
+          document.getElementById(car1oldlocation).style.zIndex = "5";  //brings car1's div to the top
+          $("#"+car1oldlocation).addClass(x+"top"); //adds the picture of car1
           locate = locate.substring(0,locate.length -1)+"C" //This sets up car 2 to go to C
         }
 
@@ -345,9 +346,11 @@ Inputs -
        
         car2oldlocation = locate //This sets up the information for the next turn
         car2space = space
-      }
+        //turn=0   Make this active to prevent a player making multiple moves per turn
+      //}
+     
     }
-    };
+  };
     
 
 
@@ -538,7 +541,7 @@ Inputs -
     $("#e2").click(function() {  
       position = "RedFlag";
       space = 30
-      checkspace("c5B"); 
+      checkspace("e2B"); 
     });
 
     $("#f2").click(function() {  
@@ -574,7 +577,7 @@ Inputs -
     $("#g8").click(function() {  
       position = "RedTyre";
       space = 36
-      checkspace("gB"); 
+      checkspace("g8B"); 
     });
 
     $("#g9").click(function() {  
@@ -628,7 +631,7 @@ Inputs -
     $("#j10").click(function() {  
       position = "GreenFlag";
       space = 45
-      checkspace("j10"); 
+      checkspace("j10B"); 
     });
 
     $("#j9").click(function() {  
@@ -733,40 +736,41 @@ Inputs -
       checkspace("q7B"); 
     });
 
-    $("#p8").click(function() {  
+    $("#q8").click(function() {  
       position = "BlueTyre";
+      space = 62
+      checkspace("q8B"); 
+    });
+
+
+    $("#p8").click(function() {  
+      position = "YellowHelmet";
       space = 63
       checkspace("p8B"); 
     });
 
     $("#o8").click(function() {  
-      position = "YellowHelmet";
+      position = "GreenFlag";
       space = 64
       checkspace("o8B"); 
     });
 
     $("#n8").click(function() {  
-      position = "GreenFlag";
+      position = "RedTyre";
       space = 65
       checkspace("n8B"); 
     });
 
     $("#m8").click(function() {  
-      position = "RedTyre";
+      position = "YellowFlag";
       space = 66
       checkspace("m8B"); 
     });
 
-    $("#l8").click(function() {  
-      position = "YellowFlag";
-      space = 67
-      checkspace("l8B"); 
-    });
-
-    $("#l10").click(function() {  
+    $("#l9").click(function() {  
       position = "BlueHelmet";
       space = 68
-      checkspace("l10B"); 
+      checkspace("l9B"); 
     });
 
     $("#l10").click(function() {  

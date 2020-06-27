@@ -80,7 +80,7 @@ li.borderless {
 .RedVolkswagenBeetleback {
   background-image: url("../img/RedVolkswagenBeetle//rear.png");}
 .RedVolkswagenBeetletop {
-  background-image: url("../img/RedVolkswagenBeetle/top.jpg");}
+  background-image: url("../img/RedVolkswagenBeetle/top.png");}
 .RedVolkswagenBeetleleft {
   background-image: url("../img/RedVolkswagenBeetle/left.png");}  
 
@@ -102,7 +102,7 @@ li.borderless {
 .YellowFordFocusback {
   background-image: url("../img/YellowFordFocus/rear.png");}
 .YellowFordFocustop {
-  background-image: url("../img/YellowFordFocus/top.jpg");}
+  background-image: url("../img/YellowFordFocus/top.png");}
 .YellowFordFocusleft {
   background-image: url("../img/YellowFordFocus/left.png");}  
 
@@ -316,7 +316,7 @@ li.borderless {
   grid-area: 190/275;
 }
 .c6box {
-  grid-area: 145/260;
+  grid-area: 153/260;
 }
 .c5box {
   grid-area: 115/270;
@@ -634,15 +634,15 @@ li.borderless {
   grid-area:558/485;
   transform: rotate(270deg);
   }
-.g18Arotate {
+.g19Arotate {
   grid-area:527/455;
   transform: rotate(270deg);
   }
-.g18Brotate {
+.g19Brotate {
   grid-area:545/455;
   transform: rotate(270deg);
   }
-.g18Crotate {
+.g19Crotate {
   grid-area:563/455;
   transform: rotate(270deg);
   }
@@ -708,7 +708,7 @@ li.borderless {
 }
 .c16Arotate {
   grid-area: 460/290;
-  transform: rotate(10deg);
+  transform: rotate(350deg);
 }
 .c16Brotate {
   grid-area: 455/280;
@@ -860,11 +860,11 @@ li.borderless {
 }
 .e2Crotate {
   grid-area: 35/360;
-  transform: rotate(65deg); 
+  transform: rotate(75deg); 
 }
 .f2Arotate {
-    grid-area: 75/398;
-    transform: rotate(90deg); 
+  grid-area: 75/398;
+  transform: rotate(90deg); 
 }
 .f2Brotate {
   grid-area: 55/398;
@@ -1003,7 +1003,7 @@ li.borderless {
   transform: rotate(20deg);
 }
 .j12Crotate {
-  grid-area: 330/540;
+  grid-area: 330/535;
   transform: rotate(20deg);
 }
 .j10Arotate {
@@ -1303,7 +1303,7 @@ transform: rotate(100deg);
   transform: rotate(200deg);
 }
 .l10Crotate {
-  grid-area: 283/640;
+  grid-area: 283/645;
   transform: rotate(200deg);
 }
 .l11Arotate {
@@ -1403,38 +1403,26 @@ transform: rotate(100deg);
   transform: rotate(150deg);
 }
 .s13Arotate {
-  grid-area: 345/895;
+  grid-area: 385/915;
   transform: rotate(150deg);
 }
 .s13Brotate {
-  grid-area: 340/910;
+  grid-area: 380/920;
   transform: rotate(160deg);
-}
+ }
 .s13Crotate {
-  grid-area: 340/925;
+  grid-area: 380/945;
   transform: rotate(160deg);
 }
 .s14Arotate {
-  grid-area: 380/905;
+  grid-area: 420/920;
   transform: rotate(160deg);
 }
 .s14Brotate {
-  grid-area: 380/920;
+  grid-area: 420/935;
   transform: rotate(160deg);
 }
 .s14Crotate {
-  grid-area: 380/935;
+  grid-area: 420/958;
   transform: rotate(160deg);
-}
-.s15Arotate {
-  grid-area: 415/915;
-  transform: rotate(170deg);
-}
-.s15Brotate {
-  grid-area: 415/930;
-  transform: rotate(170deg);
-}
-.s15Crotate {
-  grid-area: 415/945;
-  transform: rotate(170deg);
 }
