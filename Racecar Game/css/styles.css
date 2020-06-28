@@ -123,6 +123,38 @@ li.borderless {
   grid-column: 1 /200;
   grid-row:1/600;
   background-color: greenyellow;
+  display: grid;
+  grid-template-columns: repeat(200, 0.1vw);
+}
+
+.instructionsbackground {
+  grid-column: 10/190;
+  grid-row:10;
+  height: 27vw;
+  background-color: green;
+  display: grid;
+  grid-template-columns: repeat(180, 0.1vw);
+}
+
+.instructions {
+  grid-column: 20/170;
+  color: azure;
+}
+
+.startyourenginesbackground {
+  grid-column: 10/190;
+  grid-row:400;
+  height: 20vw;
+  background-color: green;
+  display: grid;
+  grid-template-columns: repeat(180, 0.1vw);
+  grid-template-rows: repeat(100, 0.1vw);
+}
+
+.startyourengineinstructions {
+  grid-column: 20/170;
+  grid-row:10;
+  color: azure;
 }
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
