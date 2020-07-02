@@ -174,7 +174,7 @@ uncard=0
 previous=1
 t = 0
 
-$("button#red3").click(function() {  /* This places the car on the start line. Probably should redo and not use bootstrap so it responds with grid*/
+$("#red3").click(function() {  /* This places the car on the start line. Probably should redo and not use bootstrap so it responds with grid*/
   alert("car1 is "+x+" car2 is "+y);
   $("div.s17Arotate").addClass(x+"top");
   document.getElementById("s17A").style.zIndex = "15";
