@@ -26,7 +26,7 @@ $(document).ready(function() {
         $("div.car1left").removeClass(car1+"left");  
       };
       if (count1===2) {
-        car1 = "BigwheelCorvette"
+        car1 = "RevJensMini"
       };
       if (count1===3) {
         car1 = "Peerless1911Roadster"
@@ -68,7 +68,7 @@ $(document).ready(function() {
       $("div.car2left").removeClass(car2+"left");  
     };
     if (count2===2) {
-      car2 = "BigwheelCorvette"
+      car2 = "RevJensMini"
     };
     if (count2===3) {
       car2 = "Peerless1911Roadster"

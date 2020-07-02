@@ -29,16 +29,16 @@ li.borderless {
 .RedDodgeViperleft {
   background-image: url("../img/RedViper/left.png");}
 
-.BigwheelCorvettefront{
-  background-image: url("../img/BigwheelCorvette/front.png");}
-.BigwheelCorvetteright {
-  background-image: url("../img/BigwheelCorvette/right.png");}
-.BigwheelCorvetteback {
-  background-image: url("../img/BigwheelCorvette/rear.png");}
-.BigwheelCorvettetop {
-  background-image: url("../img/BigwheelCorvette/top.png");}
-.BigwheelCorvetteleft {
-  background-image: url("../img/BigwheelCorvette/left.png");}
+.RevJensMinifront{
+  background-image: url("../img/RevJensMini/front.png");}
+.RevJensMiniright {
+  background-image: url("../img/RevJensMini/right.png");}
+.RevJensMiniback {
+  background-image: url("../img/RevJensMini/rear.png");}
+.RevJensMinitop {
+  background-image: url("../img/RevJensMini/top.png");}
+.RevJensMinileft {
+  background-image: url("../img/RevJensMini/left.png");}
 
 .HighMountEnginefront{
   background-image: url("../img/HighMountEngine/front.png");}
