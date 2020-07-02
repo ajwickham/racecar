@@ -19,18 +19,18 @@ li.borderless {
 /* Trying to find why the RedDodgeViper has stopped working */
 
 .RedDodgeViperfront {
-  background-image: url("../img/RedDodgeViper/Front.png");}
+  background-image: url("../img/RedViper/front.png");}
 .RedDodgeViperright {
-  background-image: url("../img/QuarryTruck/right.png");}
+  background-image: url("../img/RedViper/right.png");}
 .RedDodgeViperback {
-  background-image: url("../img/RedDodgeViper/Rear.png");}
+  background-image: url("../img/RedViper/rear.png");}
 .RedDodgeVipertop {
-  background-image: url("../img/RedDodgeViper/Top.png");}
+  background-image: url("../img/RedViper/Top.png");}
 .RedDodgeViperleft {
-  background-image: url("../img/RedDodgeViper/Left.png");}
+  background-image: url("../img/RedViper/left.png");}
 
 .BigwheelCorvettefront{
-  background-image: url("../img/RedDodgeViper/front.png");}
+  background-image: url("../img/BigwheelCorvette/front.png");}
 .BigwheelCorvetteright {
   background-image: url("../img/BigwheelCorvette/right.png");}
 .BigwheelCorvetteback {
