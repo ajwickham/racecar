@@ -1,57 +1,132 @@
+<!DOCTYPE html>
 <html>
   <head>
+    <title>Vehicle selector</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="css/stylestext.css" rel="stylesheet" type="text/css">
-    <title>Alan Wickham Portfolio</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.5.0.js"></script>
+    <script src="js/scripts.js"></script>
   </head>
   <body>
-    
-         
     <nav class="navbar">
       <div class="fontsize">
       <div class="container-fluid">
         <div class="navbar-header">
         </div>
         <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="Portfolio Explanation.html">Explanation of Portfolio</a></li>
-          <li><a href="Readme.html">Readme</a></li>
-          <li><a href="https://ajwickham.github.io/CV/index.html">CV</a></li>
-          </div>
+          <li class="active"><a href="https://ajwickham.github.io/portfolio-explanation/index.html">Portfolio</a></li>
         </ul>
       </div>  
       </div>
-    </nav>
-        
+    </nav> 
     
-   
     <div class="container">
-      <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-          <h2>Alan Wickham</h2>
-          <h1>Portfolio</h1>
-          <p style="text-align: center;">A showcase of projects to get this wannabe UI and Business Process coder onto his first project</p>
-         
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-5"></div>
-        <div class="col-md-2">
-          <a href="Car selector.html">
-          <img  src="img/Track Picture.jpg" alt="Photo of paper play mat grand prix track" class="img-thumbnail">
-          <p style="text-align: center;">The Racecar Game</p>
-          </a>
-        </div>
-        <div class="col-md-2">
-          <a href="https://ajwickham.github.io/piglatin/index.html">
-          <img src="img/Piglatin.PNG" alt="Screenshot of a simple webpage to translate into Piglatin" class="img img-thumbnail">
-          <p style="text-align: center;">PigLatin Translator (loops & arrays)</p>
-          </a>
-        </div>
-      </div>
-    </div>
-  
-       
+      <h1>Vehicle selector</h1>
      
+      <div class="row ">
+        <div class="col-sm-8">
+          <ul class="list-group">     
+            <li class="list-group-item" style="border: none">Click the next button to see the next vehicle option.</li>  
+            <li class="list-group-item" style="border: none">Scroll down and click the view button to see the vehicle from all angles.</li>  
+            <li class="list-group-item" style="border: none">Click the select button to choose the vehicle showing.</li>
+            <li class="list-group-item" style="border: none">Click the "Oh no I didn't mean to choose that one" to choose a different one</li>
+            <li class="list-group-item" style="border: none">Click the Ready to Play button, when cars have been selected</li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <a href="Track.html" class="btn btn-primary btn-lg btn-block active" role="button" aria-pressed="true" id="ready">Ready to Play</a>
+        </div>
+
+      <!--  Two bootstap columns to choose cars-->
+      
+      <div class="row ">
+      
+        <div class="col-sm-6">
+          <h2>Player One</h2>
+          
+          <button class="btn btn-primary" id="next1">Next</button>
+          <div class="car1right carsize" style="margin-bottom: 5vh;"></div>
+           
+      <!-- to work out why DodgeViper isn't working-->          
+                <button class="btn btn-warning" id="view1">View</button>
+                <button class="btn btn-warning" id="clearview1">Clear View</button>    
+                <button class="btn btn-success" id="select1">Select</button>
+                <button class="btn btn-danger"  id="red1">Oh no! I didn't mean to choose that one</button>
+          </div>
+
+        <div class="col-sm-6">
+          <h2>Player Two</h2>
+          
+          <button class="btn btn-primary" id="next2">Next</button>
+          <div class="car2right carsize" style="margin-bottom: 5vh;"></div>
+           
+                
+                <button class="btn btn-warning" id="view2">View</button>
+                <button class="btn btn-warning" id="clearview2">Clear View</button>    
+                <button class="btn btn-success" id="select2">Select</button>
+                <button class="btn btn-danger"  id="red2">Oh no! I didn't mean to choose that one</button>
+            
+        </div>
+      </div>   <!--end of row1-->
+
+      <!--  four bootstap columns to view top, front and back of cars-->
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="car1top cartop" style="justify-content: center"></div>
+        </div>
+        <div class="col-sm-3 text-right">
+          <div class="car1front carsize"></div>
+          <div class="car1back carsize"></div>
+        </div>
+        <div class="col-sm-3">
+          <div class="car2top cartop"></div>
+        </div>
+        <div class="col-sm-3 text-right">
+          <div class="car2front carsize"></div>
+          <div class="car2back carsize"></div>
+        </div>
+
+      </div>
+      <!--  Two bootstap columns to view left side of cars-->
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="car1left carsize"></div>
+        </div>
+         
+        <div class="col-sm-6">
+          <div class="car2left carsize"></div>
+        </div>
+      </div>
+      
+    </div>
+    </div>
   </body>
 </html>
+<!--
+                <div class="Red_Dodge_Viper1-hidden" >       
+                </div>
+                
+                <div class="Red_Dodge_Viper1-showing vehicle-showing">
+                <img src="img/RedDodgeViper/Red Dodge Viper Right.jpg" style="width: 100%;">
+                </div>
+              
+                <div class="Bigwheelcorvette1-hidden" >       
+                </div>
+              
+                <div class="Bigwheelcorvette1-showing vehicle-showing">
+                <img src="img/Bigwheelcorvette/Bigwheelcorvetteright.jpg" style="width: 100%;">
+                </div>
+              
+                <div class="Red_helmet-hidden1" >       
+                </div>
+              
+                <div class="Red_helmet1-showing vehicle-showing">
+                <img src="img/Picture24.png" style="width: 100%;">
+                </div>
+              
+                <div class="Purple_racecar1-hidden" >       
+                </div>
+                <div class="Purple_racecar1-showing vehicle-showing">
+                <img src="img/Picture33.png" style="width: 100%;">
+                </div>
+                -->
