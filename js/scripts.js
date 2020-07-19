@@ -6,10 +6,8 @@ $(document).ready(function() {
   count1 = 0;
   count2 = 0;
   count3 = 0;
-  count4 = 0;
   car1selected = 0
   car2selected = 0
-  card = 0
     
 
   $("button#next1").click(function() {
@@ -170,9 +168,6 @@ rubbish, after 15 cards the chance of getting the red racecar is one in 16, even
 yet the chance is 1 in 1.
 
 A future version might include an array basis for the cards, and could also distribute the icons around the track randomly*/
-uncard=0
-previous=1
-t = 0
 
 $("#red3").click(function() {  /* This places the car on the start line. Probably should redo and not use bootstrap so it responds with grid*/
   alert("car1 is "+x+" car2 is "+y);
@@ -183,8 +178,82 @@ $("#red3").click(function() {  /* This places the car on the start line. Probabl
 }); 
 
 // This is the stack of cards function
+var cardStack = []
+const stackBuilder = function(x,y) {
+  let i
+  let j
+  let iconStack=[]
+  let racecarStack=[]
+    for (let i=0; i<x; i+=1) {
+    iconStack.push("RedHelmet","BlueHelmet","YellowHelmet","RedFlag","GreenFlag","YellowFlag","RedTyre","BlueTyre","GreenTyre")
+  }
+  for (let j=0; j<y; j+=1) {
+    racecarStack.push("RedRacecar","BlueRacecar","GreenRacecar","PurpleRacecar","YellowRacecar")
+  }
+  cardStack= iconStack.concat(racecarStack); 
+  return cardStack 
+};
+
+stackBuilder(3,1);
+
+var unplayedCards = cardStack
+const nextCard = function(array) {
+  let x = Math.round((Math.random()*(array.length-1)))
+  let y = array[x]
+  array.splice(x,1);
+  array.push(y)
+  return array
+};
+
+//This is the main function, what happens when you click the stack
+let card = 0
+let uncard=0
+let t = 0
+let previous = 0
+let turn = 0  
 
 $("#stack").click(function() {
+  t=1-t  //determines whose turn it is
+  if (t===1) {turn=1}
+  else {turn =2}
+  
+  $("div.back-stand-in").removeClass(previous);  //Removes the card that stands in while the card is being flipped back to home position
+  previous=uncard
+
+  if (uncard!=0) {
+    $("div.back-stand-in").addClass(uncard);  //puts previous card icon on the stand-in card
+    $("div.flip-card-back").removeClass(uncard); //removes the prevous card icon
+     $("div.flip-card-inner").removeClass("flip-card");//flips the card back to the home position
+  }
+                     
+  unplayedCards = nextCard(unplayedCards)   //Chooses an icon and puts it on the card.
+  card = unplayedCards.pop() 
+  $("div.flip-card-back").addClass(card);
+  uncard=card;
+
+  
+  alert("Are you ready?");/*for some reason it won't do a second flip
+                          without this break here. Event bubbling? */
+  $("div.flip-card-inner").addClass("flip-card");  //card is flipped
+ 
+  if (unplayedCards.length<=0) { //replaces stack of cards when it is finished
+    stackBuilder(3,1)
+    unplayedCards=cardStack.slice(0); 
+  }  
+});
+
+  
+
+
+
+
+
+
+
+
+
+
+/*$("#stack").click(function() {
   t=1-t  //determines whose turn it is
   if (t===1) {turn=1}
   else {turn =2}
@@ -261,11 +330,11 @@ $("#stack").click(function() {
   }
  
   alert("Are you ready?");/*for some reason it won't do a second flip
-                          without this break here. Event bubbling? */
+                          without this break here. Event bubbling? 
   $("div.flip-card-inner").addClass("flip-card");  //card is flipped
   
 });
-
+*/
 
 
 /*  GAME FUNCTIONALITY  
