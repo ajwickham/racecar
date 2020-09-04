@@ -161,13 +161,13 @@ $(document).ready(function() {
 //RACETRACK PAGE
 
 
-/*Turn cards.  This project is carried out before learning about arrays and loops, which makes representing flipping through a stack of cards
+/*Turn cards.  The original project was carried out before learning about arrays and loops, which made representing flipping through a stack of cards
 tricky. As an approximation of that a random number is created that equals a class. There are 3 of each type of card, 9 types of card plus 5 racecar
 cards. So the random number is multiplied by 32 and the integer value taken to create 32 classes (0 is the first random number). Statistically this is
 rubbish, after 15 cards the chance of getting the red racecar is one in 16, eventually with only one card left, if the red racecar hasn't been played 
 yet the chance is 1 in 1.
 
-A future version might include an array basis for the cards, and could also distribute the icons around the track randomly*/
+After learning about arrays this refactored version includes an array basis for the cards.  A future project could also distribute the icons around the track randomly*/
 
 $("#red3").click(function() {  /* This places the car on the start line. Probably should redo and not use bootstrap so it responds with grid*/
   alert("car1 is "+x+" car2 is "+y);
