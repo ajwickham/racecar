@@ -1,149 +1,116 @@
 //Business or back-end logic:
+const carList = ["RedDodgeViper","RevJensMini","Peerless1911Roadster","RedVolkswagenBeetle","YellowCadillac",
+"YellowFordFocus","QuarryTruck","HighMountEngine"];
+const viewList = ["top","front","back","left","right"];
+
+function Car(carName,numberofraces,numberofvictories) {
+  this.carName = carName;
+  this.numberofraces = numberofraces;
+  this.numberofvictories = numberofvictories;
+}
+
+function Game() {
+  this.cars = [];
+}
+
+let game = new Game();
+
+Game.prototype.createCarList = function() {
+  for (let i = 0; i<carList.length; i++) {
+    let carEntry = new Car(carList[i],"","")
+    this.cars.push(carEntry);
+  }
+}
+game.createCarList();
+
+
+//Front end logic
+Game.prototype.removeCarClass = function(j,k,div,count) {
+  for (let i = j; i<k; i++) {
+    $(div+viewList[i]).removeClass(game.cars[count].carName+viewList[i]);
+  }
+}
+Game.prototype.addCarClass = function(j,k,div,count) {
+  for (let i = j; i<k; i++) {
+    $(div+viewList[i]).addClass(game.cars[count].carName+viewList[i]);
+  }  
+}
+
 $(document).ready(function() {
 
-
-  //Functions to next through left views of the cars.
-  count1 = 0;
-  count2 = 0;
-  count3 = 0;
-  car1selected = 0
-  car2selected = 0
-    
-
-  $("button#next1").click(function() {
-    $(count1+=1);
-      if (count1===1) {
-        car1 = "RedDodgeViper"};
-
-      
-      if (count1>1)  {
-        $("div.car1right").removeClass(car1+"right");
-        $("div.car1top").removeClass(car1+"top");
-        $("div.car1front").removeClass(car1+"front");
-        $("div.car1back").removeClass(car1+"back");
-        $("div.car1left").removeClass(car1+"left");  
-      };
-      if (count1===2) {
-        car1 = "RevJensMini"
-      };
-      if (count1===3) {
-        car1 = "Peerless1911Roadster"
-      };
-      if (count1===4) {
-        car1 = "RedVolkswagenBeetle"
-      };
-      if (count1===5) {
-        car1 = "YellowCadillac"
-      };
-      if (count1===6) {
-        car1 = "YellowFordFocus"
-      };
-      if (count1===7) {
-        car1 = "QuarryTruck"
-      };
-      if (count1===8) {
-        car1 = "HighMountEngine"
-      };
-      
-      $("div.car1right").addClass(car1+"right");
-      
-      if (count1===9) {
-        $("div.car1right").removeClass(car1+"right");
-        count1=0
-      };      
-  });
-
-  $("button#next2").click(function() {
-    $(count2+=1);
-    if (count2===1) {
-      car2 = "RedDodgeViper"
-    };
-    if (count2>=2)  {
-      $("div.car2right").removeClass(car2+"right");
-      $("div.car2top").removeClass(car2+"top");
-      $("div.car2front").removeClass(car2+"front");
-      $("div.car2back").removeClass(car2+"back");
-      $("div.car2left").removeClass(car2+"left");  
-    };
-    if (count2===2) {
-      car2 = "RevJensMini"
-    };
-    if (count2===3) {
-      car2 = "Peerless1911Roadster"
-    };
-    if (count2===4) {
-      car2 = "RedVolkswagenBeetle"
-    };
-    if (count2===5) {
-      car2 = "YellowCadillac"
-    };
-    if (count2===6) {
-      car2 = "YellowFordFocus"
-    };
-    if (count2===7) {
-      car2 = "QuarryTruck"
-    };
-    if (count2===8) {
-      car2 = "HighMountEngine" 
-    };
-    $("div.car2right").addClass(car2+"right");
-    if (count2===9) {
-      count2=0
-      $("div.car2right").removeClass(car2+"right");
-    };
-  });
+  //Functions to next through right views of the cars.
+  let count1 = -1;
+  let count2 = -1;
   
+  $("button#next1").click(function() {
+    if (count1>-1 && count1<carList.length)  {
+      game.removeCarClass(0,5,"div.car1",count1);
+    }
+    
+    count1 += 1;
+    
+    if (count1<carList.length) {
+      game.addCarClass(4,5,"div.car1",count1);
+    }
+    if (count1===carList.length) {
+      count1 = -1
+    }    
+  });
+
+  $("button#next2").click(function() { 
+    if (count2>-1 && count2<carList.length)  {
+      game.removeCarClass(0,5,"div.car2",count2);
+    }
+    
+    count2+=1;
+    
+    if (count2<carList.length) {
+      game.addCarClass(4,5,"div.car2",count2);
+    }
+    if (count2===carList.length) {
+      count2 = -1
+    }    
+  });
+
 //Functions to view and select cars
 
   $("button#view1").click(function() {
-    $("div.car1top").addClass(car1+"top");    
-    $("div.car1front").addClass(car1+"front");    
-    $("div.car1back").addClass(car1+"back");      
-    $("div.car1left").addClass(car1+"left");    
+    game.addCarClass(0,4,"div.car1",count1);
   });   
   $("button#clearview1").click(function() {
-      $("div.car1top").removeClass(car1+"top");
-      $("div.car1front").removeClass(car1+"front");
-      $("div.car1back").removeClass(car1+"back");
-      $("div.car1left").removeClass(car1+"left");     
+    game.removeCarClass(0,4,"div.car1",count1);  
   }); 
   
+  let car1selected = 0
+  let car2selected = 0
   $("button#select1").click(function() {
-    car1selected=car1;
+    car1selected=game.cars[count1].carName;
     if (car1selected===car2selected) {
       alert("I'm sorry, you can't choose the same car as player 2");
       car1selected=0
     }
     else {
-      alert(car1+" selected");
-      car1selected = car1
-      localStorage.transfer1 = car1;
+      alert(car1selected+" selected");
+      localStorage.transfer1 = car1selected;
     }; 
   }); 
 
   $("button#view2").click(function() {
-    $("div.car2top").addClass(car2+"top");    
-    $("div.car2front").addClass(car2+"front");    
-    $("div.car2back").addClass(car2+"back");      
-    $("div.car2left").addClass(car2+"left");    
+    game.addCarClass(0,4,"div.car2",count2);
   });   
   $("button#clearview2").click(function() {
-      $("div.car2top").removeClass(car2+"top");
-      $("div.car2front").removeClass(car2+"front");
-      $("div.car2back").removeClass(car2+"back");
-      $("div.car2left").removeClass(car2+"left");     
+    game.removeCarClass(0,4,"div.car2",count2);       
   }); 
 
   $("button#select2").click(function() {
-    car2selected=car2;
+    car2selected=game.cars[count2].carName;
     if (car1selected===car2selected) {
       alert("I'm sorry, you can't choose the same car as player 1");
       car2selected=0
     }
     else {
-      alert(car2+" selected");
-      car2selected = car2
-      localStorage.transfer2 = car2;
+      alert(car2selected+" selected");
+      localStorage.transfer2 = car2selected;
     }; 
   }); 
 
@@ -156,6 +123,13 @@ $(document).ready(function() {
     alert("Your choice of racecar has been reset");
       car2selected=0
   }); 
+});
+
+
+
+
+$(document).ready(function() {
+
 
  
 //RACETRACK PAGE
