@@ -186,18 +186,27 @@ let t = 0
 let previous = 0
 let turn = 0  
 
+let timeOut;
+function startTimeOut(){
+  timeOut = setTimeout(function(){ 
+    $("div.flip-card-inner").addClass("flip-card");
+    }, 100); 
+};
+
+
 $("#stack").click(function() {
   t=1-t  //determines whose turn it is
   if (t===1) {turn=1}
   else {turn =2}
-  
+  debugger
   $("div.back-stand-in").removeClass(previous);  //Removes the card that stands in while the card is being flipped back to home position
   previous=uncard
 
   if (uncard!=0) {
     $("div.back-stand-in").addClass(uncard);  //puts previous card icon on the stand-in card
+    $("div.flip-card-inner").removeClass("flip-card");//flips the card back to the home position
     $("div.flip-card-back").removeClass(uncard); //removes the prevous card icon
-     $("div.flip-card-inner").removeClass("flip-card");//flips the card back to the home position
+    
   }
                      
   unplayedCards = nextCard(unplayedCards)   //Chooses an icon and puts it on the card.
@@ -205,11 +214,10 @@ $("#stack").click(function() {
   $("div.flip-card-back").addClass(card);
   uncard=card;
 
-  
-  alert("Are you ready?");/*for some reason it won't do a second flip
-                          without this break here. Event bubbling? */
-  $("div.flip-card-inner").addClass("flip-card");  //card is flipped
- 
+  startTimeOut();  /*for some reason it won't do a second flip
+                          without this timer here. Event bubbling? 
+                    The timer is better than the alert that was previously used*/
+
   if (unplayedCards.length<=0) { //replaces stack of cards when it is finished
     stackBuilder(3,1)
     unplayedCards=cardStack.slice(0); 
