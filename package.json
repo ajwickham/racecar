@@ -1,0 +1,24 @@
+{
+  "name": "racecar",
+  "version": "1.0.0",
+  "description": "This is an exercise to render a photograph of a play mat in HTML and add some functionality",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajwickham/racecar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajwickham/racecar/issues"
+  },
+  "homepage": "https://github.com/ajwickham/racecar#readme",
+  "devDependencies": {
+    "webpack": "4.39.3",
+    "webpack-cli": "^3.3.8"
+  }
+}
