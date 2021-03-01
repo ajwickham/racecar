@@ -1,3 +1,4 @@
+import './css/styles.css';
 //Business or back-end logic:
 const carList = ["RedDodgeViper","RevJensMini","Peerless1911Roadster","RedVolkswagenBeetle","YellowCadillac",
 "YellowFordFocus","QuarryTruck","HighMountEngine"];

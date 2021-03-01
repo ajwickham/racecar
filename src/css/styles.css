@@ -19,7 +19,7 @@ li.borderless {
 /* Trying to find why the RedDodgeViper has stopped working */
 
 .RedDodgeViperfront {
-  background-image: url("../img/RedViper/front.png");}
+  background-image: url("./../img/RedViper/front.png");}
 .RedDodgeViperright {
   background-image: url("../img/RedViper/right.png");}
 .RedDodgeViperback {
@@ -41,15 +41,15 @@ li.borderless {
   background-image: url("../img/RevJensMini/left.png");}
 
 .HighMountEnginefront{
-  background-image: url("../img/HighMountEngine/front.png");}
+  background-image: url("./../img/HighMountEngine/front.png");}
 .HighMountEngineright {
-  background-image: url("../img/HighMountEngine/right.png");}
+  background-image: url("./../img/HighMountEngine/right.png");}
 .HighMountEngineback {
-  background-image: url("../img/HighMountEngine/rear.png");}
+  background-image: url("./../img/HighMountEngine/rear.png");}
 .HighMountEnginetop {
-  background-image: url("../img/HighMountEngine/top.png");}
+  background-image: url("./../img/HighMountEngine/top.png");}
 .HighMountEngineleft {
-  background-image: url("../img/HighMountEngine/left.jpg");}
+  background-image: url("./../img/HighMountEngine/left.png");}
  
 .Peerless1911Roadsterfront{
   background-image: url("../img/Peerless1911Roadster/front.png");}
