@@ -78,7 +78,7 @@ $(document).ready(function() {
 
 //Functions to view and select cars
 
-  $("button#view1").click(function() {
+  $("button#view1").on("click",function() {
     game.addCarClass(0,4,"div.car1",count1);
   });   
   $("button#clearview1").click(function() {

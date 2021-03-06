@@ -5,7 +5,12 @@ module.exports = {
   entry: './src/main.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    sourceMapFilename: "racecarSourceMap.js.map"
+  },
+  devtool: 'eval-source-map',
+  devServer: {
+    contentBase: './dist'
   },
   plugins: [
     new HtmlWebpackPlugin({

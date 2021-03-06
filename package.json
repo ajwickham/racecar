@@ -4,7 +4,8 @@
   "description": "This is an exercise to render a photograph of a play mat in HTML and add some functionality",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack --mode development",
+    "start": "npm run build && webpack-dev-server --open --mode development"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,8 @@
     "image-webpack-loader": "^7.0.1",
     "style-loader": "^1.0.0",
     "webpack": "4.39.3",
-    "webpack-cli": "^3.3.8"
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
