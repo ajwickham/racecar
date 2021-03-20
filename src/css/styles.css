@@ -178,15 +178,20 @@ li.borderless {
 /* This container is needed to position the front and back side */
 .flip-card-inner {
   position: relative;
-  width: 27vw;
+  width: 26.2vw;
   height: 13vw;
 }
 
 /* Position the front and back side */
+.flip-card-front {
+  background-image: url("../img/Cardstacks/pickupcardtop.png");
+  background-size: 13vw;
+}
+
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 13.5vw;
-  height: 60%;
+  height: 6.5vw;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
 }
@@ -194,72 +199,96 @@ li.borderless {
 /* Style the back side Ironically this is the side of the card with the picture, usually known as the front!*/
 .flip-card-back {
   transform: rotateY(180deg);
+  background-image: url("../img/Cardstacks/Whitetop.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 14.5vw;
+
   background-position: top left;
 } 
+
+.flip-card-back-icon{
+  position: top left;
+  transform: rotateY(180deg);
+  background-size: 16vw;
+  background-repeat: no-repeat;
+  height: 6vw;
+  width: 10vw;
+  background-position: top;
+  backface-visibility: hidden;
+  background-size: contain;
+  padding-right: 0vw;
+}
 
 .back-stand-in {  /*This replaces the flip-card-back so the flip-card back can be removed and the
                     next flip-card-back brought into place*/
   background-repeat: no-repeat;
   background-size: contain;
-  width: 27vw;
+  width: 25vw;
   height: 7.5vw;
   background-position: top right;
 }
 
 
-.RedHelmet {
+/*.RedHelmet {
   background-image: url("../img/Cardstacks/Discards/RedHelmetcard.png"); 
-}
+}*/
 .BlueHelmet {
-  background-image: url("../img/Cardstacks/Discards/BlueHelmetcard.png"); 
+  background-image: url("../img/bluehelmet.png"); 
 }
 .YellowHelmet{
-  background-image: url("../img/Cardstacks/Discards/YellowHelmetcard.png"); 
+  background-image: url("../img/yellowhelmet.png"); 
 }
 .RedFlag{
-  background-image: url("../img/Cardstacks/Discards/RedFlagcard.png"); 
+  background-image: url("../img/redflag.png"); 
 }
 .GreenFlag{
-  background-image: url("../img/Cardstacks/Discards/Greenflagcard.png"); 
+  background-image: url("../img/greenflag.png"); 
 }
 .YellowFlag{
-  background-image: url("../img/Cardstacks/Discards/YellowFlagcard.png"); 
+  background-image: url("../img/yellowflag.png"); 
 }
 .RedTyre{
-  background-image: url("../img/Cardstacks/Discards/RedTyrecard.png"); 
+  background-image: url("../img/redflag.png"); 
 }
 .BlueTyre{
-  background-image: url("../img/Cardstacks/Discards/bluetyrecard.png"); 
+  background-image: url("../img/bluetyre.png"); 
 }
 .GreenTyre{
-  background-image: url("../img/Cardstacks/Discards/Greentyrecard.png"); 
+  background-image: url("../img/greentyre.png"); 
 }
 .RedRacecar{
-  background-image: url("../img/Cardstacks/Discards/RedRacecarcard.png"); 
+  background-image: url("../img/redracecar.png"); 
 }
 .BlueRacecar{
-  background-image: url("../img/Cardstacks/Discards/BlueRacecarcard.png"); 
+  background-image: url("../img/blueracecar.png"); 
 }
 .GreenRacecar{
-  background-image: url("../img/Cardstacks/Discards/GreenRacecarcard.png"); 
+  background-image: url("../img/greenracecar.png"); 
 }
 .PurpleRacecar{
-  background-image: url("../img/Cardstacks/Discards/PurpleRacecarcard.png"); 
+  background-image: url("../img/purpleracecar.png"); 
 }
 .YellowRacecar{
-  background-image: url("../img/Cardstacks/Discards/YellowRacecarcard.png"); 
+  background-image: url("../img/yellowracecar.png"); 
 }
 
 
 .main {
   grid-column: 200/1000;
   grid-row:1/600;
+  background-image: url("../img/Track1.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  
 }
 .square {  /*class attached to grid areas to hold icons for example e2box*/
   z-index: 1;
   position: absolute;
+  height: 3.25vw;
+  width: 3.25vw;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .rotate {
   width: 3.5vw;
@@ -271,238 +300,240 @@ li.borderless {
   position: absolute; 
   transform-origin: top center;
 }
-
+.RedHelmet {
+  background-image: url("../img/redhelmet.png");
+}
 
 .r18box {
-  grid-area: 512/868;
+  grid-area: 517/875;
 }
 .q18box {
-  grid-area: 516/837
+  grid-area: 520/837
 }
 .p18box {
-  grid-area: 516/790;
+  grid-area: 523/798;
 }
 .o18box {
-  grid-area: 526/759;
+  grid-area: 524/760;
 }
 .m18box {
-  grid-area: 520/682;
+  grid-area: 524/684;
 }
 .l18box {
-  grid-area: 515/640;
+  grid-area: 524/644;
 }
 .k18box {
-  grid-area: 520/601;
+  grid-area: 525/607;
 }
 .j18box {
-  grid-area: 530/570;
+  grid-area: 526/571;
 }
 .i19box {
-  grid-area: 525/532;
+  grid-area: 527/532;
 }
 .h19box {
-  grid-area: 522/485;
+  grid-area: 528/493;
 }
 .g19box {
-  grid-area: 527/455;
+  grid-area: 530/455;
 }
 .f19box {
-  grid-area: 527/405;
+  grid-area: 532/414;
 }
 .e19box {
-  grid-area: 527/367;
+  grid-area: 533/376;
 }
 .d19box {
-  grid-area: 520/330;
+  grid-area: 529/335;
 }
 .c18box {
   grid-area: 512/298;
 }
 .c17box {
-  grid-area: 472/265;
+  grid-area: 478/272;
 }
 .c16box {
-  grid-area: 431/263;
+  grid-area: 437/273;
 }
 .c13box {
-  grid-area: 364/315;
+  grid-area: 367/322;
 }
 .d12box {
-  grid-area: 337/341;
+  grid-area: 332/339;
 }
 .d11box {
-  grid-area: 293/330;
+  grid-area: 293/337;
 }
 .d10box {
-  grid-area: 255/318;
+  grid-area: 255/320;
 }
 .c9box {
-  grid-area: 218/298;
+  grid-area: 219/300;
 }
 .c7box {
   grid-area: 190/275;
 }
 .c6box {
-  grid-area: 153/260;
+  grid-area: 143/270;
 }
 .c5box {
-  grid-area: 115/270;
+  grid-area: 105/270;
 }
 .c3box {
-  grid-area: 75/280;
+  grid-area: 68/286;
 }
 .d3box {
-  grid-area: 45/310;
+  grid-area: 40/317;
 }
 .e2box {
-  grid-area: 30/345; 
+  grid-area: 27/358; 
 }
 .f2box {
-  grid-area: 40/398;
+  grid-area: 30/397;
 }
 .g3box {
-  grid-area: 55/425;
+  grid-area: 48/433;
 }
 .g4box {
-  grid-area: 83/458;
+  grid-area: 75/465;
 }
 .h5box {
-  grid-area: 123/470;
+  grid-area: 113/475;
 }
 .h6box {
-  grid-area: 163/470;
+  grid-area: 155/472;
  }
 .g8box {
-  grid-area: 201/462;
+  grid-area: 192/460;
  }
 .g9box {
-  grid-area: 230/440;
+  grid-area: 230/443;
 }
 .f10box {
-  grid-area: 263/420;
+  grid-area: 263/425;
 }
 .f11box {
-  grid-area: 300/410;
+  grid-area: 300/420;
 }
 .g12box {
-  grid-area: 330/418;
+  grid-area: 342/429;
 }
 .g14box {
-  grid-area: 370/465;
+  grid-area: 365/467;
 }
 .h14box {
-  grid-area: 370/496;
+  grid-area: 373/503;
 }
 .i13box {
-  grid-area: 350/530;
+  grid-area: 350/540;
 }
 .j12box {
-  grid-area: 312/547;
+  grid-area: 312/555;
 }
 .j10box {
-  grid-area: 279/550;
+  grid-area: 273/559;
 }
 .j9box {
-  grid-area: 238/558;
+  grid-area: 233/558;
 }
 .j8box {
-  grid-area: 191/555;
+  grid-area: 190/555;
 }
 .j6box {
-  grid-area: 153/550;
+  grid-area: 150/559;
 }
 .j5box {
-  grid-area: 120/565;
+  grid-area: 115/565;
 }
 .k3box {
-  grid-area: 50/607;
+  grid-area: 40/609;
 }
 .l2box {
-  grid-area: 35/632;
+  grid-area: 30/641;
 }
 .m2box {
-  grid-area: 37/677;
+  grid-area: 26/677;
 }
 .n2box {
-  grid-area: 28/720;
+  grid-area: 20/720;
 }
 .o2box {
-  grid-area: 28/752;
+  grid-area: 19/756;
 }
 .p2box {
-  grid-area: 34/792;
+  grid-area: 19/792;
 }
 .q2box {
-  grid-area: 33/827;
+  grid-area: 22/827;
 }
 .q3box {
-  grid-area: 42/858;
+  grid-area: 32/861;
 }
 .r3box {
-  grid-area: 59/893;
+  grid-area: 56/893;
 }
 .s4box {
-  grid-area: 90/910;
+  grid-area: 90/914;
 }
 .s5box {
-  grid-area: 140/921;
+  grid-area: 128/921;
 }
 .r6box {
-  grid-area: 170/895;
+  grid-area: 165/900;
 }
 .q7box {
-  grid-area: 192/858;
+  grid-area: 192/866;
 }
 .q8box {
-  grid-area: 202/832;
+  grid-area: 196/832;
 }
 .p8box {
-  grid-area: 205/788;
+  grid-area: 200/792;
 }
 .o8box {
-  grid-area: 215/751;
+  grid-area: 203/751;
 }
 .n8box {
-  grid-area: 218/718;
+  grid-area: 212/715;
 }
 .m8box {
-  grid-area: 217/672;
+  grid-area: 214/678;
 }
 .l9box {
-  grid-area: 229/639;
+  grid-area: 225/645;
 }
 .l10box {
-  grid-area: 253/615;
+  grid-area: 263/630;
 }
 .l11box {
-  grid-area: 300/637;
+  grid-area: 296/638;
 }
 .l12box {
-  grid-area: 322/656;
+  grid-area: 322/662;
 }
 .m12box {
-  grid-area: 325/696;
+  grid-area: 325/705;
 }
 .n12box {
-  grid-area: 310/735;
+  grid-area: 316/742;
 }
 .o11box {
-  grid-area: 300/769;
+  grid-area: 303/777;
 }
 .p11box {
-  grid-area: 295/812;
+  grid-area: 292/812;
 }
 .q11box {
-  grid-area: 270/848;
+  grid-area: 275/848;
 }
 .s12box {
-  grid-area: 311/910;
+  grid-area: 315/914;
 }
 .s13box {
-  grid-area: 340/910;
+  grid-area: 355/925;
 }
 .s14box {
-  grid-area: 396/935;
+  grid-area: 393/938;
 }
 
 
@@ -531,7 +562,7 @@ li.borderless {
 .r18Arotate {
   grid-area:518/868;
   transform: rotate(220deg);
-  z-index: 10;
+  z-index: 10;  /* still needed? */
   }
 .r18Brotate {
   grid-area:530/868;

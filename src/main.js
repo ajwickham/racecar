@@ -147,13 +147,73 @@ yet the chance is 1 in 1.
 
 After learning about arrays this refactored version includes an array basis for the cards.  A future project could also distribute the icons around the track randomly*/
 
-$("#red3").click(function() {  /* This places the car on the start line. Probably should redo and not use bootstrap so it responds with grid*/
+$("#red3").click(function() {  /* This places the car on the start line.*/
   alert("car1 is "+x+" car2 is "+y);
   $("div.s17Arotate").addClass(x+"top");
   document.getElementById("s17A").style.zIndex = "15";
   $("div.s17Crotate").addClass(y+"top");
   document.getElementById("s17C").style.zIndex = "5";
 }); 
+
+//This is refactor work place icons in such a way as could be changed - i.e. not hardcoded in html//
+
+const raceCarIconList = ["RedRacecar", "BlueRacecar", "GreenRacecar", "PurpleRacecar", "YellowRacecar"];
+
+function RaceCarIcons() {
+  this.cars = [];
+  this.position = [11,23,35,49,59];
+}
+
+let raceCarPosition = new RaceCarIcons();
+
+RaceCarIcons.prototype.createRaceCarPositionList = function() {
+  let tempArray =[]
+  let y = raceCarIconList.length
+  for (let i = 0; i<y; i++) {
+    tempArray.push(raceCarIconList[i])
+  };
+  for (let i = 0; i<y; i++) {
+    let x = Math.round((Math.random()*(tempArray.length-1)))
+    raceCarPosition.cars.push(tempArray[x]);
+    tempArray.splice(x,1);
+  }
+}
+raceCarPosition.createRaceCarPositionList();
+
+
+
+
+
+const iconList = ["RedHelmet", "BlueTyre", "YellowHelmet", "GreenFlag", "RedTyre", "YellowFlag", "BlueHelmet","RedFlag", "GreenTyre"];
+const boxList = ["r18","q18","p18","o18","m18","l18","k18","j18","i19","h19","g19","f19","e19","d19","c18","c17","c16","c13","d12","d11","d10","c9","c7","c6","c5","c3","d3","e2","f2","g3","g4","h5","h6","g8","g9","f10","f11","g12","g14","h14","i13","j12","j10","j9","j8","j6","j5","k3","l2","m2","n2","o2","p2","q2","q3","r3","s4","s5","r6","q7","q8","p8","o8","n8","m8","l9","l10","l11","l12","m12","n12","o11","p11","q11","s12","s13","s14",
+];
+
+function buildTrack() {
+  let k = -1;
+  for (let i = 0; i < boxList.length; i++) {
+    k = k+1
+    if(k>= 9) {k=0};
+    for(let j = 0; j<5; j++) {
+      if(i == parseInt(raceCarPosition.position[j])) {
+        $("div."+boxList[i]+"box").addClass(raceCarPosition.cars[j]);  //this isn't completely working yet missing red and yellow racecars
+        j = 5;
+        i = i+1;
+      }
+    }
+    $("div."+boxList[i]+"box").addClass(iconList[k]);
+  } 
+};    
+  
+buildTrack();
+
+
+
+
+
+
+
+
+
 
 // This is the stack of cards function
 var cardStack = []
@@ -173,9 +233,8 @@ const stackBuilder = function(x,y) {
 };
 
 stackBuilder(3,1);
-
 var unplayedCards = cardStack
-const nextCard = function(array) {
+var nextCard = function(array) {
   let x = Math.round((Math.random()*(array.length-1)))
   let y = array[x]
   array.splice(x,1);
@@ -192,7 +251,7 @@ let turn = 0
 
 //timeOut before doing flip - future refactor maybe do flip first then all the resets after timer;
 function startTimeOut(){
-  timeOut = setTimeout(function(){ 
+  /*timeOut = */setTimeout(function(){ 
     $("div.flip-card-inner").addClass("flip-card");
     }, 100); 
 };
@@ -207,15 +266,15 @@ $("#stack").click(function() {
   previous=uncard
 
   if (uncard!=0) {
-    $("div.back-stand-in").addClass(uncard);  //puts previous card icon on the stand-in card
+    //$("div.back-stand-in").addClass(uncard);  //puts previous card icon on the stand-in card
     $("div.flip-card-inner").removeClass("flip-card");//flips the card back to the home position
-    $("div.flip-card-back").removeClass(uncard); //removes the prevous card icon
+    //$("div.flip-card-back").removeClass(uncard); //removes the prevous card icon
     
   }
                      
   unplayedCards = nextCard(unplayedCards)   //Chooses an icon and puts it on the card.
   card = unplayedCards.pop() 
-  $("div.flip-card-back").addClass(card);
+  $("div.flip-card-back-icon").addClass(card);
   uncard=card;
 
   startTimeOut();  /*for some reason it won't do a second flip
@@ -235,6 +294,7 @@ Inputs -
     cars selected = car1selected  car2selected
     card turned = uncard
     track square selected - location and space */
+
 
     var x = localStorage.getItem("transfer1"); //brings car choices across from selector page
     var y = localStorage.getItem("transfer2");
