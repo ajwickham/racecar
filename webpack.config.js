@@ -14,7 +14,7 @@ module.exports = {
     contentBase: './dist'
   },
   plugins: [
-    new CleanWebpackPlugin(),               
+    //new CleanWebpackPlugin(),               
     new HtmlWebpackPlugin({
       title: 'Racecar Game',
       filename: 'index.html',
