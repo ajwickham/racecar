@@ -11,10 +11,10 @@
       "node": true
     },
     "rules": {
-        "semi": 0,
-        "no-extra-semi": 0,
-        "indent": 0,
-        "no-debugger": 0
+        "semi": 1,
+        "no-extra-semi": 1,
+        "indent": ["warn",2],
+        "no-debugger": 1,
 
     }
 }
