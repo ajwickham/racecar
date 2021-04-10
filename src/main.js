@@ -3,40 +3,41 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 //Business or back-end logic:
-const carList = ["RedDodgeViper","RevJensMini","Peerless1911Roadster","RedVolkswagenBeetle","YellowCadillac",
-  "YellowFordFocus","QuarryTruck","HighMountEngine"];
+//const carList = ["RedDodgeViper","RevJensMini","Peerless1911Roadster","RedVolkswagenBeetle","YellowCadillac",
+//  "YellowFordFocus","QuarryTruck","HighMountEngine"];
 const viewList = ["top","front","back","left","right"];
 
-function Car(carName,numberofraces,numberofvictories) {
+/*function Car(carName,numberofraces,numberofvictories) {
   this.carName = carName;
   this.numberofraces = numberofraces;  //Future refactor
   this.numberofvictories = numberofvictories;
+}*/
+
+function Game(carListArray) {
+  this.cars = carListArray;
 }
 
-function Game() {
-  this.cars = [];
-}
+let game = new Game(["RedDodgeViper","RevJensMini","Peerless1911Roadster","RedVolkswagenBeetle","YellowCadillac",
+"YellowFordFocus","QuarryTruck","HighMountEngine"]);
 
-let game = new Game();
-
-Game.prototype.createCarList = function() {
+/*Game.prototype.createCarList = function() {
   for (let i = 0; i<carList.length; i++) {
     let carEntry = new Car(carList[i],"","");
     this.cars.push(carEntry);
   }
 };
-game.createCarList();
+game.createCarList();*/
 
 
 //Front end logic
 Game.prototype.removeCarClass = function(j,k,div,count) {
   for (let i = j; i<k; i++) {
-    $(div+viewList[i]).removeClass(game.cars[count].carName+viewList[i]);
+    $(div+viewList[i]).removeClass(game.cars[count]+viewList[i]);
   }
 };
 Game.prototype.addCarClass = function(j,k,div,count) {
   for (let i = j; i<k; i++) {
-    $(div+viewList[i]).addClass(game.cars[count].carName+viewList[i]);
+    $(div+viewList[i]).addClass(game.cars[count]+viewList[i]);
   }  
 };
 
@@ -47,31 +48,31 @@ $(document).ready(function() {
   let count2 = -1;
   
   $("button#next1").click(function() {
-    if (count1>-1 && count1<carList.length)  {
+    if (count1>-1 && count1<game.cars.length)  {
       game.removeCarClass(0,5,"div.car1",count1);
     }
     
     count1 += 1;
     
-    if (count1<carList.length) {
+    if (count1<game.cars.length) {
       game.addCarClass(4,5,"div.car1",count1);
     }
-    if (count1===carList.length) {
+    if (count1===game.cars.length) {
       count1 = -1;
     }    
   });
 
   $("button#next2").click(function() { 
-    if (count2>-1 && count2<carList.length)  {
+    if (count2>-1 && count2<game.cars.length)  {
       game.removeCarClass(0,5,"div.car2",count2);
     }
     
     count2+=1;
     
-    if (count2<carList.length) {
+    if (count2<game.cars.length) {
       game.addCarClass(4,5,"div.car2",count2);
     }
-    if (count2===carList.length) {
+    if (count2===game.cars.length) {
       count2 = -1;
     }    
   });
