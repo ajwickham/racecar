@@ -107,7 +107,9 @@ li.borderless {
   background-image: url("../img/YellowFordFocus/left.png");}  
 
 /* Track specific */
-
+.track {
+  background-image: url("../img/Track1.png");
+}
 
 .pagecontainer {
   display: grid;
@@ -119,16 +121,8 @@ li.borderless {
   position: absolute
 }
 
-.side {
-  grid-column: 1 /200;
-  grid-row:1/600;
-  background-color: greenyellow;
-  display: grid;
-  grid-template-columns: repeat(200, 0.1vw);
-}
-
 .instructionsbackground {
-  grid-column: 10/190;
+  grid-column: 10/290;
   grid-row:10;
   height: 27vw;
   background-image: url("../img/Howtoplay1.png");
@@ -137,8 +131,9 @@ li.borderless {
 }
 
 .startyourenginesbackground {
+  display: grid;
   grid-column: 10/190;
-  grid-row:400;
+  grid-row:400/700;
   height: 20vw;
   background-image: url("../img/Howtoplay2.png");
   background-repeat: no-repeat;
@@ -154,15 +149,26 @@ li.borderless {
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .stack {
-  grid-area: 300/1;
-   }
+  /*display: grid;*/
+  grid-area: 300/5/400/250;
+  /*grid-template-columns: auto auto auto;
+  grid-template-rows: auto;*/
+  
+}
+
 .inner-stacks {
   width: 25.5vw;
   height: 10vw;
   background-image: url("../img/Cardstacks/Bothstacks.png");
+  background-position: top left;
   background-repeat: no-repeat;
   background-size: contain;
- }
+  display: grid;
+  /*grid-area: 300/400;
+  grid-area: 1/1/2/2;*/
+  grid-template-columns: 65.5% 34.5%;
+  grid-template-rows: 5% 5.5% 88.5%;
+}
  
 .flip-card {
   background-color: transparent;
@@ -177,9 +183,12 @@ li.borderless {
 
 /* This container is needed to position the front and back side */
 .flip-card-inner {
-  position: relative;
+  position: absolute;
   width: 26.2vw;
   height: 13vw;
+  display: grid;
+  grid-template-columns: 11% 25% 25% 39%;
+  grid-template-rows: 8% 92%;
 }
 
 /* Position the front and back side */
@@ -202,30 +211,25 @@ li.borderless {
   background-image: url("../img/Cardstacks/Whitetop.png");
   background-repeat: no-repeat;
   background-size: 14.5vw;
-
   background-position: top left;
 } 
 
 .flip-card-back-icon{
-  position: top left;
+  grid-area: 2/2;
   transform: rotateY(180deg);
-  background-size: 16vw;
   background-repeat: no-repeat;
-  height: 6vw;
-  width: 10vw;
-  background-position: top;
+  height: 5.1vw;
   backface-visibility: hidden;
   background-size: contain;
-  padding-right: 0vw;
 }
 
 .back-stand-in {  /*This replaces the flip-card-back so the flip-card back can be removed and the
                     next flip-card-back brought into place*/
+  /*display: grid;*/
+  grid-area: 3/2;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 25vw;
-  height: 7.5vw;
-  background-position: top right;
+  height: 5vw;
 }
 
 
@@ -248,7 +252,7 @@ li.borderless {
   background-image: url("../img/yellowflag.png"); 
 }
 .RedTyre{
-  background-image: url("../img/redflag.png"); 
+  background-image: url("../img/redtyre.png"); 
 }
 .BlueTyre{
   background-image: url("../img/bluetyre.png"); 
@@ -304,235 +308,235 @@ li.borderless {
   background-image: url("../img/redhelmet.png");
 }
 
-.r18box {
+#r18box {
   grid-area: 517/875;
 }
-.q18box {
+#q18box {
   grid-area: 520/837
 }
-.p18box {
+#p18box {
   grid-area: 523/798;
 }
-.o18box {
+#o18box {
   grid-area: 524/760;
 }
-.m18box {
+#m18box {
   grid-area: 524/684;
 }
-.l18box {
+#l18box {
   grid-area: 524/644;
 }
-.k18box {
+#k18box {
   grid-area: 525/607;
 }
-.j18box {
+#j18box {
   grid-area: 526/571;
 }
-.i19box {
+#i19box {
   grid-area: 527/532;
 }
-.h19box {
+#h19box {
   grid-area: 528/493;
 }
-.g19box {
+#g19box {
   grid-area: 530/455;
 }
-.f19box {
+#f19box {
   grid-area: 532/414;
 }
-.e19box {
+#e19box {
   grid-area: 533/376;
 }
-.d19box {
+#d19box {
   grid-area: 529/335;
 }
-.c18box {
+#c18box {
   grid-area: 512/298;
 }
-.c17box {
+#c17box {
   grid-area: 478/272;
 }
-.c16box {
+#c16box {
   grid-area: 437/273;
 }
-.c13box {
+#c13box {
   grid-area: 367/322;
 }
-.d12box {
+#d12box {
   grid-area: 332/339;
 }
-.d11box {
+#d11box {
   grid-area: 293/337;
 }
-.d10box {
+#d10box {
   grid-area: 255/320;
 }
-.c9box {
+#c9box {
   grid-area: 219/300;
 }
-.c7box {
+#c7box {
   grid-area: 190/275;
 }
-.c6box {
+#c6box {
   grid-area: 143/270;
 }
-.c5box {
+#c5box {
   grid-area: 105/270;
 }
-.c3box {
+#c3box {
   grid-area: 68/286;
 }
-.d3box {
+#d3box {
   grid-area: 40/317;
 }
-.e2box {
+#e2box {
   grid-area: 27/358; 
 }
-.f2box {
+#f2box {
   grid-area: 30/397;
 }
-.g3box {
+#g3box {
   grid-area: 48/433;
 }
-.g4box {
+#g4box {
   grid-area: 75/465;
 }
-.h5box {
+#h5box {
   grid-area: 113/475;
 }
-.h6box {
+#h6box {
   grid-area: 155/472;
  }
-.g8box {
+#g8box {
   grid-area: 192/460;
  }
-.g9box {
+#g9box {
   grid-area: 230/443;
 }
-.f10box {
+#f10box {
   grid-area: 263/425;
 }
-.f11box {
+#f11box {
   grid-area: 300/420;
 }
-.g12box {
+#g12box {
   grid-area: 342/429;
 }
-.g14box {
+#g14box {
   grid-area: 365/467;
 }
-.h14box {
+#h14box {
   grid-area: 373/503;
 }
-.i13box {
+#i13box {
   grid-area: 350/540;
 }
-.j12box {
+#j12box {
   grid-area: 312/555;
 }
-.j10box {
+#j10box {
   grid-area: 273/559;
 }
-.j9box {
+#j9box {
   grid-area: 233/558;
 }
-.j8box {
+#j8box {
   grid-area: 190/555;
 }
-.j6box {
+#j6box {
   grid-area: 150/559;
 }
-.j5box {
+#j5box {
   grid-area: 115/565;
 }
-.k3box {
+#k3box {
   grid-area: 40/609;
 }
-.l2box {
+#l2box {
   grid-area: 30/641;
 }
-.m2box {
+#m2box {
   grid-area: 26/677;
 }
-.n2box {
+#n2box {
   grid-area: 20/720;
 }
-.o2box {
+#o2box {
   grid-area: 19/756;
 }
-.p2box {
+#p2box {
   grid-area: 19/792;
 }
-.q2box {
+#q2box {
   grid-area: 22/827;
 }
-.q3box {
+#q3box {
   grid-area: 32/861;
 }
-.r3box {
+#r3box {
   grid-area: 56/893;
 }
-.s4box {
+#s4box {
   grid-area: 90/914;
 }
-.s5box {
+#s5box {
   grid-area: 128/921;
 }
-.r6box {
+#r6box {
   grid-area: 165/900;
 }
-.q7box {
+#q7box {
   grid-area: 192/866;
 }
-.q8box {
+#q8box {
   grid-area: 196/832;
 }
-.p8box {
+#p9box {
   grid-area: 200/792;
 }
-.o8box {
+#o8box {
   grid-area: 203/751;
 }
-.n8box {
+#n8box {
   grid-area: 212/715;
 }
-.m8box {
+#m8box {
   grid-area: 214/678;
 }
-.l9box {
+#l9box {
   grid-area: 225/645;
 }
-.l10box {
+#l10box {
   grid-area: 263/630;
 }
-.l11box {
+#l11box {
   grid-area: 296/638;
 }
-.l12box {
+#l12box {
   grid-area: 322/662;
 }
-.m12box {
+#m12box {
   grid-area: 325/705;
 }
-.n12box {
+#n12box {
   grid-area: 316/742;
 }
-.o11box {
+#o11box {
   grid-area: 303/777;
 }
-.p11box {
+#p11box {
   grid-area: 292/812;
 }
-.q11box {
+#q11box {
   grid-area: 275/848;
 }
-.s12box {
+#s12box {
   grid-area: 315/914;
 }
-.s13box {
+#s13box {
   grid-area: 355/925;
 }
-.s14box {
+#s14box {
   grid-area: 393/938;
 }
 
