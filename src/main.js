@@ -2,42 +2,28 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-//Business or back-end logic:
-//const carList = ["RedDodgeViper","RevJensMini","Peerless1911Roadster","RedVolkswagenBeetle","YellowCadillac",
-//  "YellowFordFocus","QuarryTruck","HighMountEngine"];
-const viewList = ["top","front","back","left","right"];
+import RaceCarIcons from './racecarpositions';
 
-/*function Car(carName,numberofraces,numberofvictories) {
-  this.carName = carName;
-  this.numberofraces = numberofraces;  //Future refactor
-  this.numberofvictories = numberofvictories;
-}*/
 
-function Game(carListArray) {
+//exercise is to import function, but there is a problem with importing a function that uses jQuery - something about being outside the bounds??
+function Game(carListArray,viewListArray) {   
   this.cars = carListArray;
+  this.views = viewListArray
 }
 
 let game = new Game(["RedDodgeViper","RevJensMini","Peerless1911Roadster","RedVolkswagenBeetle","YellowCadillac",
-"YellowFordFocus","QuarryTruck","HighMountEngine"]);
-
-/*Game.prototype.createCarList = function() {
-  for (let i = 0; i<carList.length; i++) {
-    let carEntry = new Car(carList[i],"","");
-    this.cars.push(carEntry);
-  }
-};
-game.createCarList();*/
+"YellowFordFocus","QuarryTruck","HighMountEngine"],["top","front","back","left","right"]);
 
 
 //Front end logic
-Game.prototype.removeCarClass = function(j,k,div,count) {
-  for (let i = j; i<k; i++) {
-    $(div+viewList[i]).removeClass(game.cars[count]+viewList[i]);
+Game.prototype.removeCarClass = function(j,div,count) {
+  for (let i = j; i<this.views.length; i++) {
+    $(div+this.views[i]).removeClass(this.cars[count]+this.views[i]);
   }
 };
-Game.prototype.addCarClass = function(j,k,div,count) {
-  for (let i = j; i<k; i++) {
-    $(div+viewList[i]).addClass(game.cars[count]+viewList[i]);
+Game.prototype.addCarClass = function(j,div,count) {
+  for (let i = j; i<this.views.length; i++) {
+    $(div+this.views[i]).addClass(game.cars[count]+this.views[i]);
   }  
 };
 
@@ -49,13 +35,13 @@ $(document).ready(function() {
   
   $("button#next1").click(function() {
     if (count1>-1 && count1<game.cars.length)  {
-      game.removeCarClass(0,5,"div.car1",count1);
+      game.removeCarClass(0,"div.car1",count1);
     }
     
     count1 += 1;
     
     if (count1<game.cars.length) {
-      game.addCarClass(4,5,"div.car1",count1);
+      game.addCarClass(4,"div.car1",count1);
     }
     if (count1===game.cars.length) {
       count1 = -1;
@@ -64,13 +50,13 @@ $(document).ready(function() {
 
   $("button#next2").click(function() { 
     if (count2>-1 && count2<game.cars.length)  {
-      game.removeCarClass(0,5,"div.car2",count2);
+      game.removeCarClass(0,"div.car2",count2);
     }
     
     count2+=1;
     
     if (count2<game.cars.length) {
-      game.addCarClass(4,5,"div.car2",count2);
+      game.addCarClass(4,"div.car2",count2);
     }
     if (count2===game.cars.length) {
       count2 = -1;
@@ -80,16 +66,16 @@ $(document).ready(function() {
   //Functions to view and select cars
 
   $("button#view1").on("click",function() {
-    game.addCarClass(0,4,"div.car1",count1);
+    game.addCarClass(0,"div.car1",count1);
   });   
   $("button#clearview1").click(function() {
-    game.removeCarClass(0,4,"div.car1",count1);  
+    game.removeCarClass(0,"div.car1",count1);  
   }); 
   
   let car1selected = 0;
   let car2selected = 0;
   $("button#select1").click(function() {
-    car1selected=game.cars[count1].carName;
+    car1selected=game.cars[count1];
     if (car1selected===car2selected) {
       alert("I'm sorry, you can't choose the same car as player 2");
       car1selected=0;
@@ -101,14 +87,14 @@ $(document).ready(function() {
   }); 
 
   $("button#view2").click(function() {
-    game.addCarClass(0,4,"div.car2",count2);
+    game.addCarClass(0,"div.car2",count2);
   });   
   $("button#clearview2").click(function() {
-    game.removeCarClass(0,4,"div.car2",count2);       
+    game.removeCarClass(0,"div.car2",count2);       
   }); 
 
   $("button#select2").click(function() {
-    car2selected=game.cars[count2].carName;
+    car2selected=game.cars[count2];
     if (car1selected===car2selected) {
       alert("I'm sorry, you can't choose the same car as player 1");
       car2selected=0;
@@ -158,16 +144,16 @@ $(document).ready(function() {
 
   //This is refactor work place icons in such a way as could be changed - i.e. not hardcoded in html//
 
-  const raceCarIconList = ["RedRacecar", "BlueRacecar", "GreenRacecar", "PurpleRacecar", "YellowRacecar"];
+/*  const raceCarIconList = ["RedRacecar", "BlueRacecar", "GreenRacecar", "PurpleRacecar", "YellowRacecar"];
 
   function RaceCarIcons() {
     this.cars = [];
     this.position = [11,23,35,49,59];
-  }
+  }*/
 
   let raceCarPosition = new RaceCarIcons();
 
-  RaceCarIcons.prototype.createRaceCarPositionList = function() {
+  /*RaceCarIcons.prototype.createRaceCarPositionList = function() {
     let tempArray =[];
     let y = raceCarIconList.length;
     for (let i = 0; i<y; i++) {
@@ -178,7 +164,7 @@ $(document).ready(function() {
       raceCarPosition.cars.push(tempArray[i]);  //push(tempArray[x]) for random
       //tempArray.splice(x,1);
     }
-  };
+  };*/
   raceCarPosition.createRaceCarPositionList();
 
 
