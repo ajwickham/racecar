@@ -33,7 +33,7 @@ $(document).ready(function() {
   let count1 = -1;
   let count2 = -1;
   
-  $("button#next1").click(function() {
+  $("button#next1").on("click",function() {
     if (count1>-1 && count1<game.cars.length)  {
       game.removeCarClass(0,"div.car1",count1);
     }
@@ -48,7 +48,7 @@ $(document).ready(function() {
     }    
   });
 
-  $("button#next2").click(function() { 
+  $("button#next2").on("click",function() { 
     if (count2>-1 && count2<game.cars.length)  {
       game.removeCarClass(0,"div.car2",count2);
     }
@@ -68,13 +68,13 @@ $(document).ready(function() {
   $("button#view1").on("click",function() {
     game.addCarClass(0,"div.car1",count1);
   });   
-  $("button#clearview1").click(function() {
+  $("button#clearview1").on("click",function() {
     game.removeCarClass(0,"div.car1",count1);  
   }); 
   
   let car1selected = 0;
   let car2selected = 0;
-  $("button#select1").click(function() {
+  $("button#select1").on("click",function() {
     car1selected=game.cars[count1];
     if (car1selected===car2selected) {
       alert("I'm sorry, you can't choose the same car as player 2");
@@ -86,14 +86,14 @@ $(document).ready(function() {
     } 
   }); 
 
-  $("button#view2").click(function() {
+  $("button#view2").on("click",function() {
     game.addCarClass(0,"div.car2",count2);
   });   
-  $("button#clearview2").click(function() {
+  $("button#clearview2").on("click",function() {
     game.removeCarClass(0,"div.car2",count2);       
   }); 
 
-  $("button#select2").click(function() {
+  $("button#select2").on("click",function() {
     car2selected=game.cars[count2];
     if (car1selected===car2selected) {
       alert("I'm sorry, you can't choose the same car as player 1");
@@ -105,12 +105,12 @@ $(document).ready(function() {
     } 
   }); 
 
-  $("button#red1").click(function() {
+  $("button#red1").on("click",function() {
     alert("Your choice of racecar has been reset");
     car1selected=0;
   }); 
 
-  $("button#red2").click(function() {
+  $("button#red2").on("click",function() {
     alert("Your choice of racecar has been reset");
     car2selected=0;
   }); 
@@ -134,7 +134,7 @@ $(document).ready(function() {
 
   After learning about arrays this refactored version includes an array basis for the cards.  A future project could also distribute the icons around the track randomly*/
   $("div.main").addClass("track");
-  $("#red3").click(function() {  /* This places the car on the start line.*/
+  $("#red3").on("click",function() {  /* This places the car on the start line.*/
     alert("car1 is "+x+" car2 is "+y);
     $("div.s17Arotate").addClass(x+"top");
     document.getElementById("s17A").style.zIndex = "15";
@@ -248,7 +248,7 @@ $(document).ready(function() {
   }
 
 
-  $("#stack").click(function() {
+  $("#stack").on("click",function() {
     t=1-t;  //determines whose turn it is
     if (t===1) {turn=1;}
     else {turn =2;}
