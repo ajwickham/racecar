@@ -2,17 +2,17 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import RaceCarIcons from './racecarpositions';
+import Icons from './racecarpositions';
 
 
 //exercise is to import function, but there is a problem with importing a function that uses jQuery - something about being outside the bounds??
 function Game(carListArray,viewListArray) {   
   this.cars = carListArray;
-  this.views = viewListArray
+  this.views = viewListArray;
 }
 
 let game = new Game(["RedDodgeViper","RevJensMini","Peerless1911Roadster","RedVolkswagenBeetle","YellowCadillac",
-"YellowFordFocus","QuarryTruck","HighMountEngine"],["top","front","back","left","right"]);
+  "YellowFordFocus","QuarryTruck","HighMountEngine"],["top","front","back","left","right"]);
 
 
 //Front end logic
@@ -144,14 +144,14 @@ $(document).ready(function() {
 
   //This is refactor work place icons in such a way as could be changed - i.e. not hardcoded in html//
 
-/*  const raceCarIconList = ["RedRacecar", "BlueRacecar", "GreenRacecar", "PurpleRacecar", "YellowRacecar"];
+  /*  const raceCarIconList = ["RedRacecar", "BlueRacecar", "GreenRacecar", "PurpleRacecar", "YellowRacecar"];
 
   function RaceCarIcons() {
     this.cars = [];
     this.position = [11,23,35,49,59];
   }*/
 
-  let raceCarPosition = new RaceCarIcons();
+  let icons = new Icons();
 
   /*RaceCarIcons.prototype.createRaceCarPositionList = function() {
     let tempArray =[];
@@ -165,7 +165,7 @@ $(document).ready(function() {
       //tempArray.splice(x,1);
     }
   };*/
-  raceCarPosition.createRaceCarPositionList();
+  icons.createRaceCarPositionList();
 
 
 
@@ -181,9 +181,9 @@ $(document).ready(function() {
       k = k+1;
       if(k>= 9) {k=0;}
       for(let j = 0; j<5; j++) {
-        if(i == parseInt(raceCarPosition.position[j])) {
+        if(i == parseInt(icons.position[j])) {
           $("#"+boxList[i]+"box").addClass("square");
-          $("#"+boxList[i]+"box").addClass(raceCarPosition.cars[j]);
+          $("#"+boxList[i]+"box").addClass(icons.cars[j]);
           j = 5;
           i = i+1;
         }
@@ -205,9 +205,8 @@ $(document).ready(function() {
 
 
   // This is the stack of cards function
-  var cardStack = [];
   var discardStack = [];
-  const stackBuilder = function(x,y) {
+  /*const stackBuilder = function(x,y) {
     //let i
     //let j
     let iconStack=[];
@@ -220,18 +219,10 @@ $(document).ready(function() {
     }
     cardStack= iconStack.concat(racecarStack); 
     return cardStack; 
-  };
-
-  stackBuilder(3,1);
-
-  var unplayedCards = cardStack;
-  var nextCard = function(array) {
-    let pRand = Math.round((Math.random()*(array.length-1)));
-    let qRand = array[pRand];
-    array.splice(pRand,1);
-    array.push(qRand);
-    return array;
-  };
+  };*/
+  
+  icons.stackBuilder(3,1);
+ 
 
   //This is the stack function, what happens when you click the stack
   let card = 0;
@@ -239,6 +230,7 @@ $(document).ready(function() {
   let t = 0;
   let previous = 0;
   let turn = 0;  
+
 
   //timeOut before doing flip - future refactor maybe do flip first then all the resets after timer;
   function startTimeOut(){
@@ -264,8 +256,8 @@ $(document).ready(function() {
       
     }
                       
-    unplayedCards = nextCard(unplayedCards);   //Chooses an icon and puts it on the card.
-    card = unplayedCards.pop(); 
+    icons.nextCard();   //Chooses an icon and puts it on the card.
+    card = icons.cardStack.pop(); 
     $("div.flip-card-back-icon").addClass(card);
     discardStack.push(card);
     uncard=card;
@@ -274,9 +266,9 @@ $(document).ready(function() {
                             without this timer here. Event bubbling? 
                       The timer is better than the alert that was previously used*/
 
-    if (unplayedCards.length<=0) { //replaces stack of cards when it is finished
-      stackBuilder(3,1);
-      unplayedCards=cardStack.slice(0); 
+    if (icons.cardStack.length<=0) { //replaces stack of cards when it is finished
+      icons.stackBuilder(3,1);
+      //unplayedCards=cardStack.slice(0); This is no longer necessary.  Master is now icons.iconList
     }  
   });
  
